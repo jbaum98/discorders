@@ -91,6 +91,8 @@ class OrdersController < ApplicationController
   end
 
   def results
+    params['name']=params['name'].titleize
+    params['bunk']=params['bunk'].capitalize
     @orders = []
     params.each_key do |p|
       if @@atts.include?(p)
