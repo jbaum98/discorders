@@ -1,22 +1,22 @@
-<%= form_tag :action => "create" do %>
+<%= form_for(@order) do |f| %>
 	
-	<%= label_tag :name, "Name:" %>
-	<%= text_field_tag :name %><br />
+	<%= f.label :name, "Name:" %>
+	<%= f.text_field :name %><br />
 
-	<%= label_tag :bunk, "Bunk:" %>
-	<%= text_field_tag :bunk %><br />
+	<%= f.label :bunk, "Bunk:" %>
+	<%= f.text_field :bunk %><br />
 
-	<%= label_tag :white, "White:" %>
-	<%= number_field_tag :white, 0, min: 0, step: 1 %><br />
+	<%= f.label :white, "White:" %>
+	<%= f.number_field :white, {value: 0, min: 0, step: 1} %><br />
 
-	<%= label_tag :orange, "Orange:" %>
-	<%= number_field_tag :orange, 0, min: 0, step: 1 %><br />
+	<%= f.label :orange, "Orange:" %>
+	<%= f.number_field :orange, {value: 0, min: 0, step: 1} %><br />
 
-	<%= label_tag :blue, "Blue:" %>
-	<%= number_field_tag :blue, 0, min: 0, step: 1 %><br />
+	<%= f.label :blue, "Blue:" %>
+	<%= f.number_field :blue, {value: 0, min: 0, step: 1} %><br />
 
-	<%= label_tag :paid, "Paid:" %>
-	<%= check_box_tag :paid, "1", true %><br />
+	<%= f.label :paid, "Paid:" %>
+	<%= f.check_box :paid, {checked: true} %><br />
 
 	<%= submit_tag %>
 <% end %>
