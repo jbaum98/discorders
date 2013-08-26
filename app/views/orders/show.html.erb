@@ -45,6 +45,6 @@
 </p>
 
 
-<%= link_to 'Received', action: 'edit', id: @order.id, order: {received: true}%>
+<%= link_to "Received", order_path(@order, :from_received => true, :order => { :received => !@order.received}),:method => :put %>
 <%= link_to 'Edit', edit_order_path(@order) %>
 <%= link_to 'Back', root_path %>

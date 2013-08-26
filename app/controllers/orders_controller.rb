@@ -46,7 +46,7 @@ class OrdersController < ApplicationController
     if @order.save
       flash[:ordered] = "Order placed for #{@order.name} in bunk #{@order.bunk} for #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."
       if @order.paid
-        flash[:success] = "#{@order.name} paid $#{@order.price}."
+        flash[:paid] = "#{@order.name} paid $#{@order.price}."
       else
         flash[:notpaid] = "Remeber to bring $#{@order.price} when you pick up your discs."
       end
@@ -65,7 +65,12 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        message = case @order.received
+          when true then {received: "#{@order.name} in bunk #{@order.bunk} has received his/her #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."}
+          when false then {notreceived: "#{@order.name} in bunk #{@order.bunk} has NOT received his/her #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."}
+          else {status: 'Order was successfully updated.'}
+        end
+        format.html { redirect_to @order, flash: message }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

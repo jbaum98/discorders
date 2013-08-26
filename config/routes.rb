@@ -3,7 +3,7 @@ Disc_orders::Application.routes.draw do
   match '/search', to: 'orders#search'
   match '/results', to: 'orders#results'
   match '/all', to: 'orders#all'
-
+  
   resources :orders
 
   # The priority is based upon order of creation:

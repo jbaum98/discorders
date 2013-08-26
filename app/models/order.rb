@@ -14,7 +14,7 @@
 #
 
 class Order < ActiveRecord::Base
-  attr_accessible :name, :bunk, :white, :orange, :blue, :paid
+  attr_accessible :name, :bunk, :white, :orange, :blue, :paid, :received
   def total
   	self.blue+self.white+self.orange
   end

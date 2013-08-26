@@ -105,16 +105,23 @@ footer {
   }
 }
 
-.alert-notpaid {
-	color: $btnDangerBackgroundHighlight;
-	background-color: #f2d6d5;
+.alert-notpaid, .alert-notreceived {
+	background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
 }
 
-#notpaid {
-	color: $btnDangerBackgroundHighlight
+.alert-paid, .alert-received {
+background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
 }
 
-#paid {
+span#notpaid, td#notpaid {
+  color: #b94a48
+}
+
+span#paid, td#paid {
 	color: #468847
 }
 
