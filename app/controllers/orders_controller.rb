@@ -40,6 +40,8 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    params['order']['name']=params['order']['name'].titleize
+    params['order']['bunk']=params['order']['bunk'].capitalize
     @order = Order.new(params[:order])
     if @order.save
       flash[:success] = "Order placed for #{@order.name} in bunk #{@order.bunk} for #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."
@@ -57,6 +59,8 @@ class OrdersController < ApplicationController
   # PUT /orders/1
   # PUT /orders/1.json
   def update
+    params['order']['name']=params['order']['name'].titleize
+    params['order']['bunk']=params['order']['bunk'].capitalize
     @order = Order.find(params[:id])
 
     respond_to do |format|
@@ -88,8 +92,6 @@ class OrdersController < ApplicationController
 
   def results
     @orders = []
-   # params[:name]=params[:name].titleize
-    #params[:bunk]=params[:bunk].capitalize
     params.each_key do |p|
       if @@atts.include?(p)
         Order.find_each(conditions: ["orders.? = ?", p, params[p]]) do |camper|
