@@ -1,0 +1,34 @@
+<h1>Submit New Orders</h1>
+
+
+<p>10 Most Recent Orders<p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Bunk</th>
+    <th>White</th>
+    <th>Blue</th>
+    <th>Orange</th>
+    <th>Paid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @orders.reverse[0...10].each do |order| %>
+  <tr>
+    <td><%= order.name %></td>
+    <td><%= order.bunk %></td>
+    <td><%= order.white %></td>
+    <td><%= order.blue %></td>
+    <td><%= order.orange %></td>
+    <td><%= order.paid %></td>
+    <td><%= link_to 'Edit', edit_order_path(order) %></td>
+    <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= button_to 'New Order', new_order_path, :class => "button", :method => :get %>

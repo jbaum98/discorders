@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @order.name %>
+</p>
+
+<p>
+  <b>Bunk:</b>
+  <%= @order.bunk %>
+</p>
+
+<p>
+  <b>White:</b>
+  <%= @order.white %>
+</p>
+
+<p>
+  <b>Blue:</b>
+  <%= @order.blue %>
+</p>
+
+<p>
+  <b>Orange:</b>
+  <%= @order.orange %>
+</p>
+
+<p>
+  <b>Paid:</b>
+  <%= @order.paid %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %>
+<%= link_to 'Back', orders_path %>

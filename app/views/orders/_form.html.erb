@@ -1,0 +1,22 @@
+<%= form_tag :action => "create" do %>
+	
+	<%= label_tag :name, "Name:" %>
+	<%= text_field_tag :name %><br />
+
+	<%= label_tag :bunk, "Bunk:" %>
+	<%= text_field_tag :bunk %><br />
+
+	<%= label_tag :white, "White:" %>
+	<%= number_field_tag :white, 0, min: 0, step: 1 %><br />
+
+	<%= label_tag :orange, "Orange:" %>
+	<%= number_field_tag :orange, 0, min: 0, step: 1 %><br />
+
+	<%= label_tag :blue, "Blue:" %>
+	<%= number_field_tag :blue, 0, min: 0, step: 1 %><br />
+
+	<%= label_tag :paid, "Paid:" %>
+	<%= check_box_tag :paid, "1", true %><br />
+
+	<%= submit_tag %>
+<% end %>
