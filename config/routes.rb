@@ -1,7 +1,7 @@
 Disc_orders::Application.routes.draw do
-  match 'orders/search' => 'orders#search', :as => :search
-
-  match 'orders/results' => 'orders#results', :as => :results
+  root to: 'orders#index'
+  match '/search', to: 'orders#search'
+  match '/results', to: 'orders#results'
 
   resources :orders
 

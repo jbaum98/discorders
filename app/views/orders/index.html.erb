@@ -1,4 +1,6 @@
-<h1>Submit New Orders</h1>
+<div class="center hero-unit">
+    <h1>Submit New Orders</h1>
+</div>
 
 
 <p>10 Most Recent Orders<p>
@@ -7,8 +9,8 @@
     <th>Name</th>
     <th>Bunk</th>
     <th>White</th>
-    <th>Blue</th>
     <th>Orange</th>
+    <th>Blue</th>
     <th>Paid</th>
     <th></th>
     <th></th>
@@ -20,8 +22,8 @@
     <td><%= order.name %></td>
     <td><%= order.bunk %></td>
     <td><%= order.white %></td>
-    <td><%= order.blue %></td>
     <td><%= order.orange %></td>
+    <td><%= order.blue %></td>
     <td><%= order.paid %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
     <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>

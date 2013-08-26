@@ -15,4 +15,13 @@
 
 class Order < ActiveRecord::Base
   attr_accessible :name, :bunk, :white, :orange, :blue, :paid
+  validates :name, :bunk, presence: true
+  validate :ordered_discs
+
+  def ordered_discs
+  	if (self.blue.to_i + self.white.to_i + self.orange.to_i) <= 0
+  		errors[:base]<<"No discs ordered"
+  	end
+  end
 end
+

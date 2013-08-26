@@ -1,6 +1,6 @@
 <h1>Find An Order</h1>
 
-<%= form_tag("/orders/results", :method => "get") do %>
+<%= form_tag("/results", :method => "get") do %>
   <%= label_tag(:name, "Name:") %>
   <%= text_field_tag(:name) %><br>
   <%= label_tag(:bunk, "Bunk:") %>
@@ -8,4 +8,4 @@
   <%= submit_tag("Search") %>
 <% end %>
 
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Back', root_path %>

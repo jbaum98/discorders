@@ -1,4 +1,5 @@
 <%= form_for(@order) do |f| %>
+<%= render 'shared/error_messages' %>
 	
 	<%= f.label :name, "Name:" %>
 	<%= f.text_field :name %><br />
@@ -6,14 +7,19 @@
 	<%= f.label :bunk, "Bunk:" %>
 	<%= f.text_field :bunk %><br />
 
+	<%= f.label :discs do %>
 	<%= f.label :white, "White:" %>
-	<%= f.number_field :white, {value: 0, min: 0, step: 1} %><br />
+	<% @order.white ||= 0 %>
+	<%=f.number_field :white, {value: @order.white, min: 0, step: 1} %><br />
 
 	<%= f.label :orange, "Orange:" %>
-	<%= f.number_field :orange, {value: 0, min: 0, step: 1} %><br />
+	<% @order.orange ||= 0 %>
+	<%=f.number_field :orange, {value: @order.orange, min: 0, step: 1} %><br />
 
 	<%= f.label :blue, "Blue:" %>
-	<%= f.number_field :blue, {value: 0, min: 0, step: 1} %><br />
+	<% @order.blue ||= 0 %>
+	<%=f.number_field :blue, {value: @order.blue, min: 0, step: 1} %><br />
+	<% end %>
 
 	<%= f.label :paid, "Paid:" %>
 	<%= f.check_box :paid, {checked: true} %><br />
