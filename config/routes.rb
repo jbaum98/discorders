@@ -1,4 +1,4 @@
-Disc2::Application.routes.draw do
+Disc_orders::Application.routes.draw do
   resources :orders
 
   get "orders/search"

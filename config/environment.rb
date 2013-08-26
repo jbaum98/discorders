@@ -2,4 +2,4 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
-Disc2::Application.initialize!
+Disc_orders::Application.initialize!

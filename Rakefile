@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Disc2::Application.load_tasks
+Disc_orders::Application.load_tasks

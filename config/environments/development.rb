@@ -1,4 +1,4 @@
-Disc2::Application.configure do
+Disc_orders::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
