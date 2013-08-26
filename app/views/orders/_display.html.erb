@@ -6,6 +6,7 @@
     <th>Orange</th>
     <th>Blue</th>
     <th>Paid/Owed</th>
+    <th>Received</th>
     <th style = "background-color:#ffffff"></th>
     <th style = "background-color:#ffffff"></th>
     <th style = "background-color:#ffffff"></th>
@@ -23,6 +24,8 @@
     "$#{order.price}"
     else
     "Not Paid ($#{order.price})" end%></td>
+    <%received_word = order.received ?  "Yes" : 'No'%>
+    <td><%= link_to received_word, order_path(order, :order => { :received => !order.received}),:method => :put %></td>
     <td><%= link_to 'View', order %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
     <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>

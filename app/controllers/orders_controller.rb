@@ -70,7 +70,7 @@ class OrdersController < ApplicationController
           when false then {notreceived: "#{@order.name} in bunk #{@order.bunk} has NOT received his/her #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."}
           else {status: 'Order was successfully updated.'}
         end
-        format.html { redirect_to @order, flash: message }
+        format.html { redirect_to request.referer, flash: message }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
