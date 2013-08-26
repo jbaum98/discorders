@@ -42,9 +42,10 @@
       else
         "Not Received" end%>
   </span>
+  <%= link_to "change", order_path(@order, :order => { :received => !@order.received}),:method => :put %>
 </p>
 
 
-<%= link_to "Received", order_path(@order, :order => { :received => !@order.received}),:method => :put %>
+
 <%= link_to 'Edit', edit_order_path(@order) %>
 <%= link_to 'Back', root_path %>
