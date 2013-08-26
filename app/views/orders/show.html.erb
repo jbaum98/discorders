@@ -28,12 +28,23 @@
   <b>Paid:</b>
   <span id = "<%= unless @order.paid;'notpaid' else 'paid' end%>">
     <%= if @order.paid
-    "$#{@order.price}"
-    else
-    "Not Paid ($#{@order.price})" end%>
+          "$#{@order.price}"
+        else
+          "Not Paid ($#{@order.price})" end%>
+  </span>
+</p>
+
+<p>
+  <b>Received:</b>
+  <span id = "<%= unless @order.received;'notpaid' else 'paid' end%>">
+  <%= if @order.received 
+        "ALREADY RECEIVED"
+      else
+        "Not Received" end%>
   </span>
 </p>
 
 
+<%= link_to 'Received', action: 'edit', id: @order.id, order: {received: true}%>
 <%= link_to 'Edit', edit_order_path(@order) %>
 <%= link_to 'Back', root_path %>
