@@ -44,9 +44,9 @@ class OrdersController < ApplicationController
     params['order']['bunk']=params['order']['bunk'].capitalize
     @order = Order.new(params[:order])
     if @order.save
-      flash[:success] = "Order placed for #{@order.name} in bunk #{@order.bunk} for #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."
+      flash[:ordered] = "Order placed for #{@order.name} in bunk #{@order.bunk} for #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."
       if @order.paid
-        flash[:paid] = "#{@order.name} paid $#{@order.price}."
+        flash[:success] = "#{@order.name} paid $#{@order.price}."
       else
         flash[:notpaid] = "Remeber to bring $#{@order.price} when you pick up your discs."
       end
