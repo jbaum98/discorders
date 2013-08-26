@@ -1,50 +1,55 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></tr>
 
-<p>
-  <b>Name:</b>
-  <%= @order.name %>
-</p>
+<table>
+<tr class = 'show'>
+  <td class = 'show_bold'>Name:</td>
+  <td class = 'show'><%= @order.name %></td>
+</tr>
 
-<p>
-  <b>Bunk:</b>
-  <%= @order.bunk %>
-</p>
+<tr class = 'show'>
+  <td class = 'show_bold'>Bunk:</td>
+  <td class = 'show'><%= @order.bunk %></td>
+</tr>
 
-<p>
-  <b>White:</b>
-  <%= @order.white %>
-</p>
+<tr class = 'show'>
+  <td class = 'show_bold'>White:</td>
+  <td class = 'show'><%= @order.white %></td>
+</tr>
 
-<p>
-  <b>Orange:</b>
-  <%= @order.orange %>
-</p>
+<tr class = 'show'>
+  <td class = 'show_bold'>Orange:</td>
+  <td class = 'show'><%= @order.orange %></td>
+</tr>
 
-<p>
-  <b>Blue:</b>
-  <%= @order.blue %>
-</p>
-<p>
-  <b>Paid:</b>
+<tr class = 'show'>
+  <td class = 'show_bold'>Blue:</td>
+  <td class = 'show'><%= @order.blue %></td>
+</tr>
+<tr class = 'show'>
+  <td class = 'show_bold'>Paid:</td>
+  <td class = 'show'>
   <span id = "<%= unless @order.paid;'notpaid' else 'paid' end%>">
     <%= if @order.paid
           "$#{@order.price}"
         else
           "Not Paid ($#{@order.price})" end%>
   </span>
-</p>
+</td>
+</tr>
 
-<p>
-  <b>Received:</b>
+<tr class = 'show'>
+  <td class = 'show_bold'>Received:</td>
+  <td class = 'show'>
   <span id = "<%= unless @order.received;'notpaid' else 'paid' end%>">
   <%= if @order.received 
         "ALREADY RECEIVED"
       else
         "Not Received" end%>
   </span>
-  <%= link_to "change", order_path(@order, :order => { :received => !@order.received}),:method => :put %>
-</p>
-
+  <%= link_to "change", order_path(@order, :order => { :received => !@order.received}),:metdod => :put %>
+</td>
+</tr>
+</table>
 
 
 <%= link_to 'Edit', edit_order_path(@order) %>

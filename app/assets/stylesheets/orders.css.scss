@@ -51,9 +51,15 @@ h2 {
   color: $grayLight;
 }
 
-p {
+p, tr.show {
   font-size: x-large;
   line-height: 1.7em;
+}
+
+
+td.show_bold{
+  width: 120;
+  font-weight: bold;
 }
 
 
@@ -117,31 +123,40 @@ background-color: #dff0d8;
   color: #468847;
 }
 
-span#notpaid, td#notpaid {
+span#notpaid, td.notpaid {
   color: #b94a48
 }
 
-span#paid, td#paid {
+span#paid, td.paid {
 	color: #468847
 }
 
-table {
+table.display {
 	font-size: large;
 	border: 5;
 }
 
-td, th {
+td.display, th.display {
 	font-size:1em;
 	border:1px;
 	padding:3px 7px 2px 7px;
 }
 
-th {
+th.display {
 	font-size:1.1em;
 	text-align:left;
 	padding-top:5px;
 	padding-bottom:4px;
 	background-color:#eeeeee;
+}
+
+th.display#links {
+  font-size:1.1em;
+  text-align:left;
+  padding-top:5px;
+  padding-bottom:4px;
+  background-color:#ffffff;
+  padding: 30px
 }
 
 input[type='text'], input[type='number'], input[type='checkbox'], label{

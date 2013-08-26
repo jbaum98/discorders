@@ -1,25 +1,25 @@
-<table>
+<table class='display'>
   <tr>
-    <th>Name</th>
-    <th>Bunk</th>
-    <th>White</th>
-    <th>Orange</th>
-    <th>Blue</th>
-    <th>Paid/Owed</th>
-    <th>Received</th>
-    <th style = "background-color:#ffffff"></th>
-    <th style = "background-color:#ffffff"></th>
-    <th style = "background-color:#ffffff"></th>
+    <th class='display'>Name</th>
+    <th class='display'>Bunk</th>
+    <th class='display'>White</th>
+    <th class='display'>Orange</th>
+    <th class='display'>Blue</th>
+    <th class='display'>Paid/Owed</th>
+    <th class='display'>Received</th>
+    <th class='display' id = "links"></th>
+    <th class='display' id = "links"></th>
+    <th class='display' id = "links"></th>
   </tr>
 
 <% @orders.each do |order| %>
   <tr>
-    <td><%= order.name %></td>
-    <td><%= order.bunk %></td>
-    <td><%= order.white %></td>
-    <td><%= order.orange %></td>
-    <td><%= order.blue %></td>
-    <td id = "<%= unless order.paid;'notpaid' else 'paid' end%>">
+    <td class='display'><%= order.name %></td>
+    <td class='display'><%= order.bunk %></td>
+    <td class='display'><%= order.white %></td>
+    <td class='display'><%= order.orange %></td>
+    <td class='display'><%= order.blue %></td>
+    <td class='display' class = "<%= order.paid ? 'paid' : 'notpaid'%>">
     <%= if order.paid
     "$#{order.price}"
     else
