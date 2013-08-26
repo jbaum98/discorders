@@ -1,7 +1,9 @@
 Disc_orders::Application.routes.draw do
-  resources :orders
+  match 'orders/search' => 'orders#search', :as => :search
 
-  get "orders/search"
+  match 'orders/results' => 'orders#results', :as => :results
+
+  resources :orders
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

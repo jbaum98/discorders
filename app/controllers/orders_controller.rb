@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
+  @@atts = ['name', 'bunk']
   # GET /orders
   # GET /orders.json
   def index
     @orders = Order.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @orders }
@@ -82,6 +82,17 @@ class OrdersController < ApplicationController
   end
 
   def search
-    @orders = Orders.all
+    @order = Order.all
+  end
+
+  def results
+    @orders = []
+    params.each_key do |p|
+      if @@atts.include?(p)
+        Order.find_each(conditions: ["orders.? = ?", p, params[p]]) do |camper|
+          @orders.append(camper)
+        end
+      end
+    end
   end
 end
