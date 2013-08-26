@@ -7,7 +7,6 @@ class CreateOrders < ActiveRecord::Migration
     	t.integer :orange
     	t.integer :blue
     	t.boolean :paid
-        t.boolean :received
 
     	t.timestamps
     end
