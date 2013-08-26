@@ -2,6 +2,7 @@ Disc_orders::Application.routes.draw do
   root to: 'orders#index'
   match '/search', to: 'orders#search'
   match '/results', to: 'orders#results'
+  match '/all', to: 'orders#all'
 
   resources :orders
 

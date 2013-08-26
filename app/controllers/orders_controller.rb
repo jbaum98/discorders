@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.all.reverse[0...10]
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @orders }
@@ -42,7 +42,13 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     if @order.save
-      redirect_to @order
+      flash[:success] = "Order placed for #{@order.name} in bunk #{@order.bunk} for #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."
+      if @order.paid
+        flash[:paid] = "#{@order.name} paid $#{@order.price}."
+      else
+        flash[:notpaid] = "Remeber to bring $#{@order.price} when you pick up your discs."
+      end
+      redirect_to root_path
     else
       render 'new'
     end
@@ -82,6 +88,8 @@ class OrdersController < ApplicationController
 
   def results
     @orders = []
+   # params[:name]=params[:name].titleize
+    #params[:bunk]=params[:bunk].capitalize
     params.each_key do |p|
       if @@atts.include?(p)
         Order.find_each(conditions: ["orders.? = ?", p, params[p]]) do |camper|
@@ -89,5 +97,9 @@ class OrdersController < ApplicationController
         end
       end
     end
+  end
+
+  def all
+    @orders = Order.all
   end
 end

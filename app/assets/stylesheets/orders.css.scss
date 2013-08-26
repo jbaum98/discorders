@@ -52,7 +52,7 @@ h2 {
 }
 
 p {
-  font-size: 1.1em;
+  font-size: x-large;
   line-height: 1.7em;
 }
 
@@ -73,6 +73,10 @@ p {
     color: white;
     text-decoration: none;
   }
+}
+
+div.hero-unit {
+	padding: 20px
 }
 
 /* footer */
@@ -99,4 +103,42 @@ footer {
       margin-left: 10px;
     }
   }
+}
+
+.alert-notpaid {
+	color: $btnDangerBackgroundHighlight;
+	background-color: #f2d6d5;
+}
+
+#notpaid {
+	color: $btnDangerBackgroundHighlight
+}
+
+#paid {
+	color: #468847
+}
+
+table {
+	font-size: large;
+	border: 5;
+}
+
+td, th {
+	font-size:1em;
+	border:1px;
+	padding:3px 7px 2px 7px;
+}
+
+th {
+	font-size:1.1em;
+	text-align:left;
+	padding-top:5px;
+	padding-bottom:4px;
+	background-color:#eeeeee;
+}
+
+input[type='text'], input[type='number'], input[type='checkbox'], label{
+	font-size: large;
+	height: 30;
+	display: inline;
 }

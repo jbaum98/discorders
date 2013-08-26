@@ -26,12 +26,14 @@
 </p>
 <p>
   <b>Paid:</b>
-  <%= if @order.paid
-    "$#{(@order.white + @order.blue + @order.orange)*8}"
+  <span id = "<%= unless @order.paid;'notpaid' else 'paid' end%>">
+    <%= if @order.paid
+    "$#{@order.price}"
     else
-    "None" end%>
+    "Not Paid ($#{@order.price})" end%>
+  </span>
 </p>
 
 
 <%= link_to 'Edit', edit_order_path(@order) %>
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Back', root_path %>

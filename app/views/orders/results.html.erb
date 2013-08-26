@@ -1,32 +1,7 @@
 <h1>Results</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Bunk</th>
-    <th>White</th>
-    <th>Blue</th>
-    <th>Orange</th>
-    <th>Paid</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @orders.each do |order| %>
-  <tr>
-    <td><%= order.name %></td>
-    <td><%= order.bunk %></td>
-    <td><%= order.white %></td>
-    <td><%= order.blue %></td>
-    <td><%= order.orange %></td>
-    <td><%= order.paid %></td>
-    <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<%= render 'display'%>
 
 <br />
 
-<%= link_to 'New Search', action: 'search'%>
+<%= button_to 'New Search', action: 'search'%>

@@ -15,11 +15,23 @@
 
 class Order < ActiveRecord::Base
   attr_accessible :name, :bunk, :white, :orange, :blue, :paid
+  def total
+  	self.blue+self.white+self.orange
+  end
+  def price
+  	self.total*8
+  end
+  def name
+  	read_attribute(:name).titleize
+  end
+  def bunk
+  	read_attribute(:bunk).capitalize
+  end
   validates :name, :bunk, presence: true
   validate :ordered_discs
 
   def ordered_discs
-  	if (self.blue.to_i + self.white.to_i + self.orange.to_i) <= 0
+  	if self.total <= 0
   		errors[:base]<<"No discs ordered"
   	end
   end
