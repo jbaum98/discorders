@@ -26,5 +26,5 @@
 	<td class = 'show'><%= f.check_box :paid, {checked: paid_cache} %></td></tr>
 	</table><br>
 
-	<%= submit_tag %>
+	<%= submit_tag("Save changes", {:class => "btn btn-primary"})%>
 <% end %>

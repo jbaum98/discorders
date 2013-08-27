@@ -54,6 +54,7 @@ h2 {
 p, tr.show {
   font-size: x-large;
   line-height: 1.7em;
+  width:400
 }
 
 
@@ -62,7 +63,6 @@ td.show_bold, label.show_bold{
   font-size: x-large;
   font-weight: bold;
 }
-
 
 /* header */
 
@@ -169,4 +169,8 @@ input[type='text'], input[type='number'], input[type='checkbox'], label{
 input#needy, label#needy {
   vertical-align: middle;
   margin:0
+}
+
+form.button_to {
+  display:inline
 }
