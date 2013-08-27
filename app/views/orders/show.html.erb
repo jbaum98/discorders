@@ -1,46 +1,39 @@
 <% provide(:title, 'View Order') %>
-<p id="notice"><%= notice %><p>
+<p id="notice"><%= notice %></p>
 
-<table>
-<tr class = 'show'>
-  <td class = 'show_bold'>Name:</td>
-  <td class = 'show'><%= @order.name %></td>
-</tr>
+<dl class = 'dl-horizontal'>
+  <dt>Name:</dt>
+  <dd><%= @order.name %></dd>
 
-<tr class = 'show'>
-  <td class = 'show_bold'>Bunk:</td>
-  <td class = 'show'><%= @order.bunk %></td>
-</tr>
 
-<tr class = 'show'>
-  <td class = 'show_bold'>White:</td>
-  <td class = 'show'><%= @order.white %></td>
-</tr>
+  <dt>Bunk:</dt>
+  <dd><%= @order.bunk %></dd>
 
-<tr class = 'show'>
-  <td class = 'show_bold'>Orange:</td>
-  <td class = 'show'><%= @order.orange %></td>
-</tr>
 
-<tr class = 'show'>
-  <td class = 'show_bold'>Blue:</td>
-  <td class = 'show'><%= @order.blue %></td>
-</tr>
-<tr class = 'show'>
-  <td class = 'show_bold'>Paid:</td>
-  <td class = 'show'>
+  <dt>White:</dt>
+  <dd><%= @order.white %></dd>
+
+
+  <dt>Orange:</dt>
+  <dd><%= @order.orange %></dd>
+
+
+  <dt>Blue:</dt>
+  <dd><%= @order.blue %></dd>
+
+  <dt>Paid:</dt>
+  <dd>
   <span id = "<%= unless @order.paid;'notpaid' else 'paid' end%>">
     <%= if @order.paid
           "$#{@order.price}"
         else
           "Not Paid ($#{@order.price})" end%>
   </span>
-</td>
-</tr>
+  </dd>
 
-<tr class = 'show'>
-  <td class = 'show_bold'>Received:</td>
-  <td class = 'show'>
+
+  <dt>Received:</dt>
+  <dd>
   <span id = "<%= unless @order.received;'notpaid' else 'paid' end%>">
   <%= if @order.received 
         "ALREADY RECEIVED"
@@ -49,9 +42,9 @@
   </span>
   <%old_params = params || {}%>
   <%= link_to "change", order_path(@order, :order => { :received => !@order.received}, :old_params => old_params), :method => :put%>
-</td>
-</tr>
-</table>
+</dd>
+
+</dl>
 
 
 <%= link_to 'Edit', edit_order_path(@order) %>

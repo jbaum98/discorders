@@ -1,30 +1,59 @@
-<%= form_for(@order) do |f| %>
+<%= form_for(@order, :html => {class: "form-horizontal"}) do |f| %>
 <%= render 'shared/error_messages' %>
-	<table>
-	<tr><td class = 'show_bold'><%= f.label :name, "Name:", class: 'show_bold'%></td>
-	<td class = 'show'><%= f.text_field :name, {placeholder: ''}%></td></tr>
+	<div class="control-group">
+	<%= f.label :name, "Name:", class: "control-label"%>
+	<div class="controls">
+	<%= f.text_field :name, {placeholder: ''}%>
+	</div>
+	</div>
 
-	<tr><td class = 'show_bold'><%= f.label :bunk, "Bunk:", class: 'show_bold'%></td>
-	<td class = 'show'><%= f.text_field :bunk, {placeholder: '' }%></td></tr>
+	<div class="control-group">
+	<%= f.label :bunk, "Bunk:", class: "control-label"%>
+	<div class="controls">
+	<%= f.text_field :bunk, {placeholder: '' }%>
+	</div>
+	</div>
 
-	<tr><td class = 'show_bold'><%= f.label :discs do %></td>
-	<tr><td class = 'show_bold'><%= f.label :white, "White:", class: 'show_bold'%></td>
-	<% @order.white ||= 0 %></td>
-	<td class = 'show' id = "white_num"><%=f.number_field :white, {value: @order.white, min: 0, step: 1, class: 'count-me'} %></td></tr>
+	<div class="control-group">
+	<% @order.white ||= 0 %>
+	<%= f.label :white, "Discs:", class: "control-label"%>
+	<div class="controls">
+	<div class="input-prepend">
+    <span class="add-on">White:</span>
+	<%=f.number_field :white, {value: @order.white, min: 0, step: 1} %>
+	</div>
+	</div>
+	</div>
 
-	<tr><td class = 'show_bold' id = "orange_num"><%= f.label :orange, "Orange:", class: 'show_bold'%></td>
-	<% @order.orange ||= 0 %></td>
-	<td class = 'show'><%=f.number_field :orange, {value: @order.orange, min: 0, step: 1, class: 'count-me'} %></td></tr>
+	<div class="control-group">
+	<% @order.orange ||= 0 %>
+	<div class="controls">
+	<div class="input-prepend">
+    <span class="add-on">Orange:</span>
+	<%=f.number_field :orange, {value: @order.orange, min: 0, step: 1} %>
+	</div>
+	</div>
+	</div>
 
-	<tr><td class = 'show_bold' id = "blue_num"><%= f.label :blue, "Blue:", class: 'show_bold'%></td>
-	<% @order.blue ||= 0 %></td>
-	<td class = 'show'><%=f.number_field :blue, {value: @order.blue, min: 0, step: 1, class: 'count-me'} %></td></tr>
-	<% end %></td>
+	<div class="control-group">
+	<% @order.blue ||= 0 %>
+	<div class="controls">
+	<div class="input-prepend">
+    <span class="add-on">Blue:</span>
+	<%=f.number_field :blue, {value: @order.blue, min: 0, step: 1} %>
+	</div>
+	</div>
+	</div>
 
+	<div class="control-group">
 	<% paid_cache = @order.paid.nil? || @order.paid %>
-	<tr><td class = 'show_bold'><%= f.label :paid, "Paid:", class: 'show_bold', id: 'countit' %></td>
-	<td class = 'show'><%= f.check_box :paid, {checked: paid_cache} %></td></tr>
-	</table><br>
+	<%= f.label :paid, "Paid:", class: "control-label"%>
+	<div class="controls">
+	<%= f.check_box :paid, {checked: paid_cache} %>
+	</div>
+	</div>
 
+	<div class="control-group"><div class="controls">
 	<%= submit_tag("Save changes", {:class => "btn btn-primary"})%>
+	</div></div>
 <% end %>
