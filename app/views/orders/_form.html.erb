@@ -16,25 +16,32 @@
 
 	<div class="control-group">
 	<% @order.white ||= 0 %>
-	<%= f.label :white, "White:", class: "control-label"%>
+	<%= f.label :discs, "Discs:", class: "control-label"%>
 	<div class="controls">
+	<div class="input-prepend">
+    <span class="add-on" style = "width:50">White</span>
 	<%=f.number_field :white, {value: @order.white, min: 0, step: 1} %>
+	</div>
 	</div>
 	</div>
 
 	<div class="control-group">
 	<% @order.orange ||= 0 %>
-	<%= f.label :orange, "Orange:", class: "control-label"%>
 	<div class="controls">
+	<div class="input-prepend">
+    <span class="add-on" style = "width:50">Orange</span>
 	<%=f.number_field :orange, {value: @order.orange, min: 0, step: 1} %>
+	</div>
 	</div>
 	</div>
 
 	<div class="control-group">
 	<% @order.blue ||= 0 %>
-	<%= f.label :blue, "Blue:", class: "control-label"%>
 	<div class="controls">
+	<div class="input-prepend">
+    <span class="add-on" style = "width:50">Blue</span>
 	<%=f.number_field :blue, {value: @order.blue, min: 0, step: 1} %>
+	</div>
 	</div>
 	</div>
 

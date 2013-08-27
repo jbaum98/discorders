@@ -33,8 +33,7 @@
     <td><%= link_to received_word, order_path(order, :order => { :received => !order.received}, :old_params => old_params), :method => :put%></td>
     <td><%= link_to 'View', order %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>
 <% end %>
 </table>
-<%= button_to "New Order", new_order_path, :class => "btn btn-primary", :method => :get%>
+<%= link_to "New Order", new_order_path, class: "btn btn-primary"%>
