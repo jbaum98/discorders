@@ -1,11 +1,13 @@
 Disc_orders::Application.routes.draw do
-  get "users/new"
+ 
   get '/total', action: 'total', controller: 'orders'
 
-  resources :orders
+  resources :orders, :users
   root to: 'orders#index'
   post '/index', action: 'index', controller: 'orders'
   match '/search', to: 'orders#search'
+  
+  match '/signup',  to: 'users#new'
   
   
 
