@@ -101,14 +101,20 @@ class OrdersController < ApplicationController
     params['bunk']&&=params['bunk'].capitalize
     @orders = []
     params.each_key do |term| if @@atts.include? term and not params[term].empty?
-        Order.all.each do |order|
-          if order[term].include? params[term] or params[term].include? order[term]
-            @orders.append(order) unless @orders.include? order or (params[:needy]=='1' and order.received)
-          end
+      Order.all.each do |order|
+        if order[term].include? params[term] or params[term].include? order[term]
+          @orders.append(order) unless @orders.include? order or (params[:needy]=='1' and order.received)
         end
       end
     end
+    if params['name'].empty? and params['bunk'].empty?
+      Order.all.each do |order|
+        @orders.append(order) unless @orders.include? order or (params[:needy]=='1' and order.received)
+      end
+    end
   end
+end
+
 
   def all
     @orders = Order.all
