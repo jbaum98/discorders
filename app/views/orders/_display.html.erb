@@ -19,7 +19,7 @@
     <td class='display'><%= order.white %></td>
     <td class='display'><%= order.orange %></td>
     <td class='display'><%= order.blue %></td>
-    <td class='display' class = "<%= order.paid ? 'paid' : 'notpaid'%>">
+    <td class='display' id = "<%= order.paid ? 'paid' : 'notpaid'%>">
     <%= if order.paid
     "$#{order.price}"
     else
