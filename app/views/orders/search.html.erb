@@ -1,21 +1,33 @@
 <% provide(:title, 'Search') %>
 <h1>Find An Order</h1>
 
-<table>
-<%= form_tag("/index", :method => "post") do %>
-  <tr><td class = "show_bold" style = "width: 30"><%= label_tag(:name, "Name:") %></td>
-  <td class = "show"><%= text_field_tag(:name) %></td></tr>
-  <tr><td class = "show_bold" style = "width: 30"><%= label_tag(:bunk, "Bunk:") %></td>
-  <td class = "show"><%= text_field_tag(:bunk) %><td></tr>
-  </table>
-
-  <div>
-  <%= label_tag(:needy, "Search only for people that haven't yet received:", id: 'needy') %>
-  <%= check_box_tag(:needy) %><br>
+<dl>
+<%= form_tag("/index", :method => "post", class: "form-horizontal") do %>
+<div class="control-group">
+  <dt><%= label_tag(:name, "Name:", class: "control-label") %></dt>
+	<div class="controls">
+  <dd><%= text_field_tag(:name, nil, class: "search-query") %></dd>
+	</div>
 </div>
 
+<span class="control-group">
+  <dt><%= label_tag(:bunk, "Bunk:", class: "control-label") %></dt>
+  <div class="controls">
+  <dd><%= text_field_tag(:bunk, nil, class: "search-query")%><dd>
+  </div>
+</span> 
+
+<div class="control-group">
+	<div class="controls">
+  <%= label_tag(:needy, "Not received only", id: 'needy') %>
+	
+  <%= check_box_tag(:needy) %>
+
+  <br>
   <%= submit_tag("Search", {:class => "btn btn-primary"}) %>
+  <%= link_to 'Back', root_path %>
+  	</div>
+</div>
 <% end %>
+</dl>
 
-
-<%= link_to 'Back', root_path %>
