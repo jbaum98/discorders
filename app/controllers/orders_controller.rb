@@ -110,4 +110,16 @@ class OrdersController < ApplicationController
     end
   end
 
+  def total
+    @order_total = Order.all.size
+    
+    #white_total = blue_total = orange_total = []
+    [:white, :orange, :blue].each do |color|
+      instance_variable_set("@#{color}_count", [])
+      Order.all.each {|order| instance_variable_get("@#{color}_count").append(order[color])}
+      instance_variable_set("@#{color}_total", instance_variable_get("@#{color}_count").sum)
+    end
+    @disc_total=@white_total+@blue_total+@orange_total
+  end
+
 end
