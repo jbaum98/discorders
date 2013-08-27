@@ -62,8 +62,6 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    params['order']['name']=params['order']['name'].titleize unless params['order']['name'].nil?
-    params['order']['bunk']=params['order']['bunk'].capitalize unless params['order']['bunk'].nil?
     @order = Order.new(params[:order])
     if @order.save
       flash[:ordered] = "Order placed for #{@order.name} in bunk #{@order.bunk} for #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."
@@ -81,8 +79,6 @@ class OrdersController < ApplicationController
   # PUT /orders/1
   # PUT /orders/1.json
   def update
-    params['order']['name']=params['order']['name'].titleize unless params['order']['name'].nil?
-    params['order']['bunk']=params['order']['bunk'].capitalize unless params['order']['bunk'].nil?
     params[:old_params] ||={}
     @order = Order.find(params[:id])
 
