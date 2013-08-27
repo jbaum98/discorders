@@ -23,13 +23,22 @@ class Order < ActiveRecord::Base
   def price
   	self.total*8
   end
+
   validates :name, :bunk, presence: true
   validate :ordered_discs
+  validate :paid_before_received
 
   def ordered_discs
   	if self.total <= 0
   		errors[:base]<<"No discs ordered"
   	end
   end
+
+  def paid_before_received
+    if not self.paid and self.received
+      errors.add :received, "before paid."
+    end
+  end
 end
+
 

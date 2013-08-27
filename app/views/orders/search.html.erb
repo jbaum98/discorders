@@ -1,11 +1,14 @@
 <h1>Find An Order</h1>
 
-<%= form_tag("/results", :method => "get") do %>
-  <%= label_tag(:name, "Name:") %>
-  <%= text_field_tag(:name) %><br>
-  <%= label_tag(:bunk, "Bunk:") %>
-  <%= text_field_tag(:bunk) %><br>
+<table>
+<%= form_tag("/results", :method => "post") do %>
+  <tr><td class = "show_bold" style = "width: 30"><%= label_tag(:name, "Name:") %></td>
+  <td class = "show"><%= text_field_tag(:name) %></td></tr>
+  <tr><td class = "show_bold" style = "width: 30"><%= label_tag(:bunk, "Bunk:") %></td>
+  <td class = "show"><%= text_field_tag(:bunk) %><td></tr>
+  </table>
   <%= submit_tag("Search") %>
 <% end %>
+
 
 <%= link_to 'Back', root_path %>

@@ -22,7 +22,7 @@
 	<% end %></td>
 
 	<tr><td class = 'show_bold'><%= f.label :paid, "Paid:", class: 'show_bold'%></td>
-	<td class = 'show'><%= f.check_box :paid, {checked: true} %></td></tr>
+	<td class = 'show'><%= f.check_box :paid, {checked: @order.paid} %></td></tr>
 	</table><br>
 
 	<%= submit_tag %>

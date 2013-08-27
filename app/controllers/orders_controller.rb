@@ -95,15 +95,16 @@ class OrdersController < ApplicationController
   def search
     @order = Order.all
   end
-
+  
   def results
     params['name']=params['name'].titleize
     params['bunk']=params['bunk'].capitalize
     @orders = []
-    params.each_key do |p|
-      if @@atts.include?(p)
-        Order.find_each(conditions: ["orders.? = ?", p, params[p]]) do |camper|
-          @orders.append(camper)
+    params.each_key do |term| if @@atts.include? term and not params[term].empty?
+        Order.all.each do |order|
+          if order[term].include? params[term] or params[term].include? order[term]
+            @orders.append(order) unless @orders.include? order
+          end
         end
       end
     end
