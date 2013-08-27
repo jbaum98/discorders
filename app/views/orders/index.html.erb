@@ -4,13 +4,13 @@
 
 <table class='display'>
   <tr>
-    <th class='display'><%= link_to 'Name', action: 'index', sort: 'name', reverse: !(params[:reverse]=="true") %></th>
-    <th class='display'><%= link_to 'Bunk', action: 'index', sort: 'bunk', reverse: !(params[:reverse]=="true") %></th>
+    <th class='display'><%= link_to 'Name', params.merge({action: 'index', sort: 'name', reverse: !(params[:reverse]=="true")}) %></th>
+    <th class='display'><%= link_to 'Bunk', params.merge({action: 'index', sort: 'bunk', reverse: !(params[:reverse]=="true")}) %></th>
     <th class='display'>White</th>
     <th class='display'>Orange</th>
     <th class='display'>Blue</th>
-    <th class='display'><%= link_to 'Paid/Owed', action: 'index', sort: 'paid', reverse: !(params[:reverse]=="true") %></th>
-    <th class='display'><%= link_to 'Received', action: 'index', sort: 'received', reverse: !(params[:reverse]=="true") %></th>
+    <th class='display'><%= link_to 'Paid/Due', params.merge({action: 'index', sort: 'paid', reverse: !(params[:reverse]=="true")}) %></th>
+    <th class='display'><%= link_to 'Received', params.merge({action: 'index', sort: 'received', reverse: !(params[:reverse]=="true")}) %></th>
     <th class='display' id = "links"></th>
     <th class='display' id = "links"></th>
     <th class='display' id = "links"></th>

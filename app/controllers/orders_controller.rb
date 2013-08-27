@@ -27,7 +27,8 @@ class OrdersController < ApplicationController
     params[:sort] ||= 'created_at'
     params[:reverse] ||= 'true'
 
-    @orders.sort_by!{ |order| order[params[:sort]]}
+    @orders.sort_by!{ |order| order[params[:sort]]} unless ['paid', 'received'].include? params[:sort]
+    @orders.sort_by!{ |order| order[params[:sort]] ? 0 : 1} if ['paid', 'received'].include? params[:sort]
     @orders.reverse! if (params[:reverse] == "true")
   end
 
