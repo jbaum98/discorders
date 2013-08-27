@@ -3,11 +3,32 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all.reverse[0...10]
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @orders }
+    unless params['name'].nil? and params['bunk'].nil?
+      params['name']&&=params['name'].titleize
+      params['bunk']&&=params['bunk'].capitalize
+      @orders = []
+      params.each_key do |term|
+        if @@atts.include? term and not params[term].empty?
+          Order.all.each do |order|
+            if order[term].include? params[term] or params[term].include? order[term]
+              @orders.append(order) unless @orders.include? order or (params[:needy]=='1' and order.received)
+            end
+          end
+        end
+      end
+      if params['name'].empty? and params['bunk'].empty?
+        Order.all.each do |order|
+          @orders.append(order) unless @orders.include? order or (params[:needy]=='1' and order.received)
+        end
+      end
     end
+    @orders=Order.all if params['name'].nil? and params['bunk'].nil?
+
+    params[:sort] ||= 'created_at'
+    params[:reverse] ||= 'true'
+
+    @orders.sort_by!{ |order| order[params[:sort]]}
+    @orders.reverse! if (params[:reverse] == "true")
   end
 
   # GET /orders/1
@@ -40,7 +61,7 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-     params['order']['name']=params['order']['name'].titleize unless params['order']['name'].nil?
+    params['order']['name']=params['order']['name'].titleize unless params['order']['name'].nil?
     params['order']['bunk']=params['order']['bunk'].capitalize unless params['order']['bunk'].nil?
     @order = Order.new(params[:order])
     if @order.save
@@ -69,7 +90,7 @@ class OrdersController < ApplicationController
         message = case @order.received
           when true then {received: "#{@order.name} in bunk #{@order.bunk} has received his/her #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."}
           when false then {notreceived: "#{@order.name} in bunk #{@order.bunk} has NOT received his/her #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."}
-        end
+          end
         format.html { redirect_to({url: request.referer}.merge(params[:old_params]), flash: message )} unless URI(request.referer).path.include? 'edit'
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
         format.json { head :no_content }
@@ -92,31 +113,4 @@ class OrdersController < ApplicationController
     end
   end
 
-  def search
-    @order = Order.all
-  end
-  
-  def results
-    params['name']&&=params['name'].titleize
-    params['bunk']&&=params['bunk'].capitalize
-    @orders = []
-    params.each_key do |term| if @@atts.include? term and not params[term].empty?
-      Order.all.each do |order|
-        if order[term].include? params[term] or params[term].include? order[term]
-          @orders.append(order) unless @orders.include? order or (params[:needy]=='1' and order.received)
-        end
-      end
-    end
-    if params['name'].empty? and params['bunk'].empty?
-      Order.all.each do |order|
-        @orders.append(order) unless @orders.include? order or (params[:needy]=='1' and order.received)
-      end
-    end
-  end
-end
-
-
-  def all
-    @orders = Order.all
-  end
 end

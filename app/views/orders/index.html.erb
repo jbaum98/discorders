@@ -1,10 +1,41 @@
 <div class="center hero-unit">
-    <h1>Submit New Orders</h1>
+    <h1>All Orders</h1>
 </div>
 
+<table class='display'>
+  <tr>
+    <th class='display'><%= link_to 'Name', action: 'index', sort: 'name', reverse: !(params[:reverse]=="true") %></th>
+    <th class='display'><%= link_to 'Bunk', action: 'index', sort: 'bunk', reverse: !(params[:reverse]=="true") %></th>
+    <th class='display'>White</th>
+    <th class='display'>Orange</th>
+    <th class='display'>Blue</th>
+    <th class='display'><%= link_to 'Paid/Owed', action: 'index', sort: 'paid', reverse: !(params[:reverse]=="true") %></th>
+    <th class='display'><%= link_to 'Received', action: 'index', sort: 'received', reverse: !(params[:reverse]=="true") %></th>
+    <th class='display' id = "links"></th>
+    <th class='display' id = "links"></th>
+    <th class='display' id = "links"></th>
+  </tr>
 
-<p>10 Most Recent Orders<p>
-
-<%= render 'display' %>
-
-<%= button_to 'New Order', new_order_path, :class => "button", :method => :get %>
+<% @orders.each do |order| %>
+  <tr>
+    <td class='display'><%= order.name %></td>
+    <td class='display'><%= order.bunk %></td>
+    <td class='display'><%= order.white %></td>
+    <td class='display'><%= order.orange %></td>
+    <td class='display'><%= order.blue %></td>
+    <td class='display' id = "<%= order.paid ? 'paid' : 'notpaid'%>">
+    <%= if order.paid
+    "$#{order.price}"
+    else
+    "Not Paid ($#{order.price})" end%></td>
+    <%received_word = order.received ?  "Yes" : 'No'%>
+    <%old_params = params || {}%>
+    <td><%= link_to received_word, order_path(order, :order => { :received => !order.received}, :old_params => old_params), :method => :put%></td>
+    <td><%= link_to 'View', order %></td>
+    <td><%= link_to 'Edit', edit_order_path(order) %></td>
+    <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= button_to "New Order", new_order_path, :class => "button", :method => :get%>

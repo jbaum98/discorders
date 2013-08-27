@@ -21,8 +21,9 @@
 	<td class = 'show'><%=f.number_field :blue, {value: @order.blue, min: 0, step: 1, class: 'count-me'} %></td></tr>
 	<% end %></td>
 
+	<% paid_cache = @order.paid.nil? || @order.paid %>
 	<tr><td class = 'show_bold'><%= f.label :paid, "Paid:", class: 'show_bold', id: 'countit' %></td>
-	<td class = 'show'><%= f.check_box :paid, {checked: @order.paid} %></td></tr>
+	<td class = 'show'><%= f.check_box :paid, {checked: paid_cache} %></td></tr>
 	</table><br>
 
 	<%= submit_tag %>
