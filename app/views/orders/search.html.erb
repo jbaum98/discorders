@@ -7,6 +7,12 @@
   <tr><td class = "show_bold" style = "width: 30"><%= label_tag(:bunk, "Bunk:") %></td>
   <td class = "show"><%= text_field_tag(:bunk) %><td></tr>
   </table>
+
+  <div>
+  <%= label_tag(:needy, "Search only for people that haven't yet received:", id: 'needy') %>
+  <%= check_box_tag(:needy) %><br>
+</div>
+
   <%= submit_tag("Search") %>
 <% end %>
 

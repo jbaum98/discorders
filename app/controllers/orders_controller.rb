@@ -70,7 +70,7 @@ class OrdersController < ApplicationController
           when false then {notreceived: "#{@order.name} in bunk #{@order.bunk} has NOT received his/her #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."}
           else {status: 'Order was successfully updated.'}
         end
-        format.html { redirect_to request.referer, flash: message } unless URI(request.referer).path.include?'edit'
+        format.html { redirect_to({url: request.referer}.merge(params[:old_params]), flash: message )} unless URI(request.referer).path.include?'edit'
         format.html { redirect_to @order, flash: message }
         format.json { head :no_content }
       else
@@ -97,13 +97,13 @@ class OrdersController < ApplicationController
   end
   
   def results
-    params['name']=params['name'].titleize
-    params['bunk']=params['bunk'].capitalize
+    params['name']&&=params['name'].titleize
+    params['bunk']&&=params['bunk'].capitalize
     @orders = []
     params.each_key do |term| if @@atts.include? term and not params[term].empty?
         Order.all.each do |order|
           if order[term].include? params[term] or params[term].include? order[term]
-            @orders.append(order) unless @orders.include? order
+            @orders.append(order) unless @orders.include? order or (params[:needy]=='1' and order.received)
           end
         end
       end
