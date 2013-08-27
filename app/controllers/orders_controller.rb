@@ -61,6 +61,7 @@ class OrdersController < ApplicationController
   def update
     params['order']['name']=params['order']['name'].titleize unless params['order']['name'].nil?
     params['order']['bunk']=params['order']['bunk'].capitalize unless params['order']['bunk'].nil?
+    params[:old_params] ||={}
     @order = Order.find(params[:id])
 
     respond_to do |format|
@@ -68,10 +69,9 @@ class OrdersController < ApplicationController
         message = case @order.received
           when true then {received: "#{@order.name} in bunk #{@order.bunk} has received his/her #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."}
           when false then {notreceived: "#{@order.name} in bunk #{@order.bunk} has NOT received his/her #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."}
-          else {status: 'Order was successfully updated.'}
         end
-        format.html { redirect_to({url: request.referer}.merge(params[:old_params]), flash: message )} unless URI(request.referer).path.include?'edit'
-        format.html { redirect_to @order, flash: message }
+        format.html { redirect_to({url: request.referer}.merge(params[:old_params]), flash: message )} unless URI(request.referer).path.include? 'edit'
+        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
