@@ -1,28 +1,29 @@
 <%= form_for(@order) do |f| %>
 <%= render 'shared/error_messages' %>
-	
-	<%= f.label :name, "Name:" %>
-	<%= f.text_field :name, {placeholder: ''}%><br />
+	<table>
+	<tr><td class = 'show_bold'><%= f.label :name, "Name:" %></td>
+	<td class = 'show'><%= f.text_field :name, {placeholder: ''}%></td></tr>
 
-	<%= f.label :bunk, "Bunk:" %>
-	<%= f.text_field :bunk, {placeholder: ''} %><br />
+	<tr><td class = 'show_bold'><%= f.label :bunk, "Bunk:" %></td>
+	<td class = 'show'><%= f.text_field :bunk, {placeholder: ''} %></td></tr>
 
-	<%= f.label :discs do %>
-	<%= f.label :white, "White:" %>
-	<% @order.white ||= 0 %>
-	<%=f.number_field :white, {value: @order.white, min: 0, step: 1} %><br />
+	<tr><td class = 'show_bold'><%= f.label :discs do %></td>
+	<tr><td class = 'show_bold'><%= f.label :white, "White:" %></td>
+	<% @order.white ||= 0 %></td>
+	<td class = 'show'><%=f.number_field :white, {value: @order.white, min: 0, step: 1} %></td></tr>
 
-	<%= f.label :orange, "Orange:" %>
-	<% @order.orange ||= 0 %>
-	<%=f.number_field :orange, {value: @order.orange, min: 0, step: 1} %><br />
+	<tr><td class = 'show_bold'><%= f.label :orange, "Orange:" %></td>
+	<% @order.orange ||= 0 %></td>
+	<td class = 'show'><%=f.number_field :orange, {value: @order.orange, min: 0, step: 1} %></td></tr>
 
-	<%= f.label :blue, "Blue:" %>
-	<% @order.blue ||= 0 %>
-	<%=f.number_field :blue, {value: @order.blue, min: 0, step: 1} %><br />
-	<% end %>
+	<tr><td class = 'show_bold'><%= f.label :blue, "Blue:" %></td>
+	<% @order.blue ||= 0 %></td>
+	<td class = 'show'><%=f.number_field :blue, {value: @order.blue, min: 0, step: 1} %></td></tr>
+	<% end %></td>
 
-	<%= f.label :paid, "Paid:" %>
-	<%= f.check_box :paid, {checked: true} %><br />
-	
+	<tr><td class = 'show_bold'><%= f.label :paid, "Paid:" %></td>
+	<td class = 'show'><%= f.check_box :paid, {checked: true} %></td></tr>
+	</table>
+
 	<%= submit_tag %>
 <% end %>
