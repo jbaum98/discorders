@@ -116,10 +116,13 @@ class OrdersController < ApplicationController
     #white_total = blue_total = orange_total = []
     [:white, :orange, :blue].each do |color|
       instance_variable_set("@#{color}_count", [])
-      Order.all.each {|order| instance_variable_get("@#{color}_count").append(order[color])}
+      Order.all.each {|order| instance_variable_get("@#{color}_count").append(order[color]) if order[color].is_a? Fixnum}
       instance_variable_set("@#{color}_total", instance_variable_get("@#{color}_count").sum)
     end
     @disc_total=@white_total+@blue_total+@orange_total
+    @received_total=@price_total=0
+    Order.all.each {|order| @received_total+=1 if order.received}
+    Order.all.each {|order| @price_total+=order.price}
   end
 
 end

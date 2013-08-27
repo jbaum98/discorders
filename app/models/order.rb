@@ -14,7 +14,7 @@
 #
 
 class Order < ActiveRecord::Base
-  attr_accessible :name, :bunk, :white, :orange, :blue, :paid, :received
+  attr_accessible :name, :bunk, :white, :orange, :blue, :paid, :received, :price
   before_save {self.name = name.titleize; self.bunk=bunk.capitalize}
   
   def total

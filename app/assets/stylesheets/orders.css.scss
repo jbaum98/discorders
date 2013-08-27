@@ -132,34 +132,6 @@ span#paid, td#paid {
   color: #468847
 }
 
-table.display {
-  font-size: large;
-  border: 5;
-}
-
-td.display, th.display {
-  font-size:1em;
-  border:1px;
-  padding:3px 7px 2px 7px;
-}
-
-th.display {
-  font-size:1.1em;
-  text-align:left;
-  padding-top:5px;
-  padding-bottom:4px;
-  background-color:#eeeeee;
-}
-
-th.display#links {
-  font-size:1.1em;
-  text-align:left;
-  padding-top:5px;
-  padding-bottom:4px;
-  background-color:#ffffff;
-  padding: 30px
-}
-
 input[type='text'], input[type='number'], input[type='checkbox'], label{
   font-size: large;
   height: 30;
@@ -173,4 +145,10 @@ input#needy, label#needy {
 
 form.button_to {
   display:inline
+}
+
+dd, dt, dl{
+  font-size: x-large;
+  line-height: 40px;
+  text-align: left
 }

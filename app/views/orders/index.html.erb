@@ -2,28 +2,28 @@
     <h1>All Orders</h1>
 </div>
 
-<table class='display'>
+<table class = "table table-border table-hover">
   <tr>
-    <th class='display'><%= link_to 'Name', params.merge({action: 'index', sort: 'name', reverse: !(params[:reverse]=="true")}) %></th>
-    <th class='display'><%= link_to 'Bunk', params.merge({action: 'index', sort: 'bunk', reverse: !(params[:reverse]=="true")}) %></th>
-    <th class='display'>White</th>
-    <th class='display'>Orange</th>
-    <th class='display'>Blue</th>
-    <th class='display'><%= link_to 'Paid/Due', params.merge({action: 'index', sort: 'paid', reverse: !(params[:reverse]=="true")}) %></th>
-    <th class='display'><%= link_to 'Received', params.merge({action: 'index', sort: 'received', reverse: !(params[:reverse]=="true")}) %></th>
-    <th class='display' id = "links"></th>
-    <th class='display' id = "links"></th>
-    <th class='display' id = "links"></th>
+    <th><%= link_to 'Name', params.merge({action: 'index', sort: 'name', reverse: !(params[:reverse]=="true")}) %></th>
+    <th><%= link_to 'Bunk', params.merge({action: 'index', sort: 'bunk', reverse: !(params[:reverse]=="true")}) %></th>
+    <th>White</th>
+    <th>Orange</th>
+    <th>Blue</th>
+    <th><%= link_to 'Paid/Due', params.merge({action: 'index', sort: 'paid', reverse: !(params[:reverse]=="true")}) %></th>
+    <th><%= link_to 'Received', params.merge({action: 'index', sort: 'received', reverse: !(params[:reverse]=="true")}) %></th>
+    <th id = "links"></th>
+    <th id = "links"></th>
+    <th id = "links"></th>
   </tr>
 
 <% @orders.each do |order| %>
   <tr>
-    <td class='display'><%= order.name %></td>
-    <td class='display'><%= order.bunk %></td>
-    <td class='display'><%= order.white %></td>
-    <td class='display'><%= order.orange %></td>
-    <td class='display'><%= order.blue %></td>
-    <td class='display' id = "<%= order.paid ? 'paid' : 'notpaid'%>">
+    <td><%= order.name %></td>
+    <td><%= order.bunk %></td>
+    <td><%= order.white %></td>
+    <td><%= order.orange %></td>
+    <td><%= order.blue %></td>
+    <td id = "<%= order.paid ? 'paid' : 'notpaid'%>">
     <%= if order.paid
     "$#{order.price}"
     else
@@ -37,5 +37,4 @@
   </tr>
 <% end %>
 </table>
-<br />
 <%= button_to "New Order", new_order_path, :class => "btn btn-primary", :method => :get%>

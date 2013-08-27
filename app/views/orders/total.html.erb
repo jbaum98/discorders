@@ -1,0 +1,20 @@
+<% provide(:title, 'Totals') %>
+<div class="center hero-unit">
+    <h1>Totals</h1>
+</div>
+<dl class="dl-horizontal">
+  <dt>Orders:</dt>
+  <dd><%= @order_total %></dd>
+  <dt>Discs:</dt>
+  <dd><%= @disc_total %></dd>
+  <dt>Whites:</dt>
+  <dd><%= @white_total %></dd>
+  <dt>Orange:</dt>
+  <dd><%= @orange_total %></dd>
+  <dt>Blues:</dt>
+  <dd><%= @blue_total %></dd>
+  <dt>Profits:</dt>
+  <dd><%= "$#{@price_total}" %></dd>
+  <dt>Served:</dt>
+  <dd><%= @received_total %></dd>
+</dl>
