@@ -1,5 +1,0 @@
-database_details: 
- adapter: sqlite3 
- database: user_dbs/sherry_waksbaum.sqlite3 
- username: root 
- password:
