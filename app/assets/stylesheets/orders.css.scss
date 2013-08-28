@@ -4,6 +4,7 @@
 
 $grayMediumLight: #eaeaea;
 
+
 /* universal */
 
 html {
@@ -153,6 +154,20 @@ dd, dt, dl{
   text-align: left
 }
 
-.input-append .add-on, .input-prepend .add-on{
+.input-append .add-on, .input-prepend .add-on {
   width: 50
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors, .field_with_errors:before, .field_with_errors:after {
+  @extend .control-group;
+  @extend .error;
+  display: inline !important;
 }
