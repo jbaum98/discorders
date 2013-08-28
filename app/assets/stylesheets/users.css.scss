@@ -2,8 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* forms */
+$grayMediumLight: #eaeaea;
 
 #user_password, #user_password_confirmation {
 	height: 30;
 	font-size: x-large
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayMediumLight;
+    &:last-child {
+      border-bottom: 1px solid $grayMediumLight;
+    }
+  }
 }

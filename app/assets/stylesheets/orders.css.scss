@@ -77,6 +77,10 @@ td.show_bold, label.show_bold{
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
+  width: 440;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   &:hover {
     color: white;
     text-decoration: none;
