@@ -40,6 +40,8 @@ class Order < ActiveRecord::Base
       errors.add :received, "before paid."
     end
   end
+
+
 end
 
 
