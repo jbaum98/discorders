@@ -1,16 +1,17 @@
 Disc_orders::Application.routes.draw do
- 
-  get '/total', action: 'total', controller: 'orders'
-
-  resources :orders, :users
   root to: 'orders#index'
+  resources :orders
+  get '/total', action: 'total', controller: 'orders'
   post '/index', action: 'index', controller: 'orders'
   match '/search', to: 'orders#search'
-  
-  match '/signup',  to: 'users#new'
-  
-  
 
+  resources :users, only: [:new, :create, :destroy]
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
+
+  resources :sessions, only: [:new, :create, :destroy]
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
