@@ -5,6 +5,9 @@ gem "bootstrap-sass", "~> 2.3.2.1"
 gem 'bcrypt-ruby', '3.0.1'
 gem 'strong_parameters'
 gem 'turbolinks'
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
+
 
 group :development do
   gem 'sqlite3', '1.3.5'

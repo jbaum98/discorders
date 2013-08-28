@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	before_save { self.name = name.titleize }
+	before_validation(:name_titleize)
 	before_create :create_remember_token
   validates :name, presence: true, length: {maximum: 50}, uniqueness: true
   has_secure_password
@@ -14,7 +14,14 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
+	def name_titleize
+      self.name=name.titleize
+  end
   private
+
+  def database_path
+  	"#{Rails.root}/db/#{@user.name.gsub(' ', '_')}"
+  end
 
   def create_remember_token
   	self.remember_token = User.encrypt(User.new_remember_token)
