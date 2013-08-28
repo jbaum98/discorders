@@ -4,6 +4,11 @@
           <%= link_to "disc orders", root_path, id: "logo" %>
           <nav>
             <ul class="nav pull-right">
+              <%if signed_in? %>
+              <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+              <% else %>
+              <li><%= link_to "Sign in", signin_path %></li>
+              <% end %>
               <li><%= link_to "All Orders", root_path, sort: nil, reverse: nil %></li>
               <li><%= link_to "New Order", new_order_path%>
               <li><%= link_to "Totals", action:'total', controller: 'orders' %></li>
