@@ -17,12 +17,12 @@ class User < ActiveRecord::Base
 	def name_titleize
       self.name=name.titleize
   end
+  private
 
   def database_path
-  	"#{Rails.root}/db/users_dbs/#{self.name.downcase.gsub(' ', '_')}.yml"
+  	"#{Rails.root}/db/#{@user.name.gsub(' ', '_')}"
   end
 
-  private
   def create_remember_token
   	self.remember_token = User.encrypt(User.new_remember_token)
   end

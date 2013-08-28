@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
- # prepend_before_filter :choose_database
   before_filter :signed_in_user, only: [:index, :edit, :update]
   before_filter :correct_user,   only: [:edit, :update]
 
-  def create_user_database(user)
-    File.open( user.database_path, 'w+') do |f|
-      f.write("database_details: \n adapter: sqlite3 \n database: user_dbs/#{user.name.downcase.gsub(' ', '_')}.sqlite3 \n username: root \n password:")
-    end
+  def create_user_database
+    #File.open( @user.database_path, 'w+') do |f|
+    #  f.write("database_details: \n adapter: mysql \n database: client_db_name \n username: root \n password:")
+    #end
   end
 
-  def destroy_user_database(user)
-    File.delete user.database_path if File.exist?user.database_path
+  def destroy_user_database
+    #File.delete @user.database_path
   end
 
   def new
@@ -20,7 +19,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      create_user_database @user
+      create_user_database
       sign_in @user
     	flash[:success] = "#{@user.name} registered!"
       redirect_to action:'index', controller:'orders'
@@ -34,16 +33,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    destroy_user_database @user
-    @user.destroy
+    User.find(params[:id]).destroy
+    destroy_user_database
     flash[:success] = "User destroyed."
     redirect_to users_url
-  end
-
-  def choose_database
-    if File.exists?(current_user.database_path)
-      ActiveRecord::Base.establish_connection(YAML::load(ERB.new(IO.read(current_user.database_path)).result)['database_details'])
   end
 
   private
