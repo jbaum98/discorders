@@ -2,10 +2,11 @@ Disc_orders::Application.routes.draw do
   root to: 'orders#index'
   resources :orders
   get '/total', action: 'total', controller: 'orders'
+  get '/index', action: 'index', controller: 'orders'
   post '/index', action: 'index', controller: 'orders'
   match '/search', to: 'orders#search'
 
-  resources :users, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create, :index, :destroy]
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
