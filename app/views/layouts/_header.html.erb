@@ -1,6 +1,7 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
+          <div class = "container">
           <%if signed_in? %>
           <%= link_to "disc orders [#{current_user.name}]", root_path, id: "logo" %>
           <% else %>
@@ -20,6 +21,7 @@
               <li><%= link_to "Search", search_path %></li>
             </ul>
           </nav>
-        </div>
+          </div>
+      </div>
       </div>
     </header>

@@ -77,7 +77,7 @@ td.show_bold, label.show_bold{
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
-  width: 420;
+  width: calc(95% - 505px);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

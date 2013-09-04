@@ -12,3 +12,7 @@
  *= require_tree .
  */
 @import "bootstrap";
+
+div.container {
+	width: 80% !important
+}
