@@ -13,9 +13,7 @@
         Paid/Due <i class=<%= if params[:sort]=='paid' && !params[:reverse].nil? ; params[:reverse]=='true' ? "icon-chevron-up" : "icon-chevron-down" end%> ></i><%end%></th>
     <th><%= link_to(params.merge({action: 'index', sort: 'received', reverse: !(params[:reverse]=="true")})) do %>
         Received <i class=<%= if params[:sort]=='received' && !params[:reverse].nil? ; params[:reverse]=='true' ? "icon-chevron-up" : "icon-chevron-down" end%> ></i><%end%></th>
-    <th id = "links"></th>
-    <th id = "links"></th>
-    <th id = "links"></th>
+    <th></th>
   </tr>
 
 <% @orders.each do |order| %>
@@ -49,9 +47,6 @@
   </ul>
 </div>
     </td>
-    <!--<td><%= link_to 'View', order %></td>
-    <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>-->
 <% end %>
 </table>
 <%= link_to "New Order", new_order_path, class: "btn btn-primary"%>
