@@ -5,21 +5,21 @@
     <%= render 'shared/error_messages_users' %>
 
     	<div class="control-group">
-			<%= f.label :name, "Username:", class: "control-label"%>
+			<%= f.label :name, "Username", class: "control-label"%>
 			<div class="controls">
 			<%= f.text_field :name, {placeholder: ''}%>
 			</div>
 			</div>
 
 			<div class="control-group">
-			<%= f.label :password, "Password:", class: "control-label"%>
+			<%= f.label :password, "Password", class: "control-label"%>
 			<div class="controls">
 			<%= f.password_field :password, {placeholder: '' }%>
 			</div>
 			</div>
 
 			<div class="control-group">
-			<%= f.label :password_confirmation, "Confirmation:", class: "control-label"%>
+			<%= f.label :password_confirmation, "Confirmation", class: "control-label"%>
 			<div class="controls">
 			<%= f.password_field :password_confirmation, {placeholder: '' }%>
 			</div>
