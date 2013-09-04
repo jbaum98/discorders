@@ -14,6 +14,8 @@
 #
 
 class Order < ActiveRecord::Base
+  belongs_to :user
+
   attr_accessible :name, :bunk, :white, :orange, :blue, :paid, :received, :price
   before_save {self.name = name.titleize; self.bunk=bunk.capitalize}
   

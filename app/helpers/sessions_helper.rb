@@ -23,6 +23,10 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  def all_orders
+    signed_in? ? current_user.orders : Order.find_all_by_user_id(nil)
+  end
+
   def sign_out
     self.current_user = nil
     cookies.delete(:remember_token)

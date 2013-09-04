@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
       @orders = []
       params.each_key do |term|
         if @@atts.include? term and not params[term].empty?
-          Order.all.each do |order|
+          all_orders.each do |order|
             if order[term].include? params[term] or params[term].include? order[term]
               @orders.append(order) unless @orders.include? order or (params[:needy]=='1' and order.received)
             end
@@ -17,12 +17,12 @@ class OrdersController < ApplicationController
         end
       end
       if params['name'].empty? and params['bunk'].empty?
-        Order.all.each do |order|
+        all_orders.each do |order|
           @orders.append(order) unless @orders.include? order or (params[:needy]=='1' and order.received)
         end
       end
     end
-    @orders=Order.all if params['name'].nil? and params['bunk'].nil?
+    @orders=all_orders if params['name'].nil? and params['bunk'].nil?
 
     params[:sort] ||= 'created_at'
     params[:reverse] ||= 'true'
@@ -62,7 +62,7 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(params[:order])
+    @order = signed_in? ? current_user.orders.new(params[:order]) : Order.new(params[:order])
     if @order.save
       flash[:ordered] = "Order placed for #{@order.name} in bunk #{@order.bunk} for #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."
       if @order.paid
@@ -111,18 +111,18 @@ class OrdersController < ApplicationController
   end
 
   def total
-    @order_total = Order.all.size
+    @order_total = all_orders.size
     
     #white_total = blue_total = orange_total = []
     [:white, :orange, :blue].each do |color|
       instance_variable_set("@#{color}_count", [])
-      Order.all.each {|order| instance_variable_get("@#{color}_count").append(order[color]) if order[color].is_a? Fixnum}
+      all_orders.each {|order| instance_variable_get("@#{color}_count").append(order[color]) if order[color].is_a? Fixnum}
       instance_variable_set("@#{color}_total", instance_variable_get("@#{color}_count").sum)
     end
     @disc_total=@white_total+@blue_total+@orange_total
     @received_total=@price_total=0
-    Order.all.each {|order| @received_total+=1 if order.received}
-    Order.all.each {|order| @price_total+=order.price}
+    all_orders.each {|order| @received_total+=1 if order.received}
+    all_orders.each {|order| @price_total+=order.price}
   end
 
 end

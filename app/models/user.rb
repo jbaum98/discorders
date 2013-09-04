@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :orders, dependent: :destroy
 	before_validation(:name_titleize)
 	before_create :create_remember_token
-  before_create :add_user_id
   validates :name, presence: true, length: {maximum: 50}, uniqueness: true
   has_secure_password
   validates :password, length: { minimum: 6 }
@@ -20,13 +20,6 @@ class User < ActiveRecord::Base
   end
 
   private
-
-  def add_user_id
-  end
-
-  def database_path
-  	"#{Rails.root}/db/#{@user.name.gsub(' ', '_')}"
-  end
 
   def create_remember_token
   	self.remember_token = User.encrypt(User.new_remember_token)
