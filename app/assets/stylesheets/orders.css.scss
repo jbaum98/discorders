@@ -175,3 +175,16 @@ dd, dt, dl{
   @extend .error;
   display: inline !important;
 }
+
+.dropdown-toggle {
+  height:20
+}
+
+.dropdown-menu {
+  min-width: 100;
+  li {
+    a {
+    padding-left:12
+    }
+  }
+}

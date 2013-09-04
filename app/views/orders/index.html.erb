@@ -31,9 +31,26 @@
     <%received_word = order.received ?  "Yes" : 'No'%>
     <%old_params = params || {}%>
     <td><%= link_to received_word, order_path(order, :order => { :received => !order.received}, :old_params => old_params), :method => :put%></td>
-    <td><%= link_to 'View', order %></td>
+    <td>
+        <div class="btn-group">
+  <%= link_to(order, class: "btn btn-primary") do%>
+  <i class="icon-user icon-white"></i> View
+    <% end %>
+  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><%= link_to(edit_order_path(order)) do %>
+    <i class="icon-pencil"></i> Edit
+    <% end %></li>
+    <li><%= link_to(order, method: :delete, data: { confirm: 'Are you sure?' }) do%>
+    <i class="icon-trash"></i> Delete
+    <% end %>
+    </li>
+  </ul>
+</div>
+    </td>
+    <!--<td><%= link_to 'View', order %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>
+    <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>-->
 <% end %>
 </table>
 <%= link_to "New Order", new_order_path, class: "btn btn-primary"%>
