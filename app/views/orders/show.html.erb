@@ -23,7 +23,7 @@
 
   <dt>Paid:</dt>
   <dd>
-  <span id = "<%= unless @order.paid;'notpaid' else 'paid' end%>">
+  <span id = "<%= @order.paid ? 'paid' : 'notpaid'%>">
     <%= if @order.paid
           "$#{@order.price}"
         else
@@ -34,7 +34,7 @@
 
   <dt>Received:</dt>
   <dd>
-  <span id = "<%= unless @order.received;'notpaid' else 'paid' end%>">
+  <span id = "<%= @order.received ? 'paid' : 'notpaid' %>">
   <%= if @order.received 
         "ALREADY RECEIVED"
       else

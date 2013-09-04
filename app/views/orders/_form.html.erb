@@ -1,14 +1,14 @@
 <%= form_for(@order, :html => {class: "form-horizontal"}) do |f| %>
 <%= render 'shared/error_messages' %>
 	<div class="control-group">
-	<%= f.label :name, "Name:", class: "control-label"%>
+	<%= f.label :name, "Name", class: "control-label"%>
 	<div class="controls">
 	<%= f.text_field :name, {placeholder: ''}%>
 	</div>
 	</div>
 
 	<div class="control-group">
-	<%= f.label :bunk, "Bunk:", class: "control-label"%>
+	<%= f.label :bunk, "Bunk", class: "control-label"%>
 	<div class="controls">
 	<%= f.text_field :bunk, {placeholder: '' }%>
 	</div>
@@ -16,7 +16,7 @@
 
 	<div class="control-group">
 	<% @order.white ||= 0 %>
-	<%= f.label :white, "Discs:", class: "control-label"%>
+	<%= f.label :white, "Discs", class: "control-label"%>
 	<div class="controls">
 	<div class="input-prepend">
     <span class="add-on">White:</span>
@@ -47,7 +47,7 @@
 
 	<div class="control-group">
 	<% paid_cache = @order.paid.nil? || @order.paid %>
-	<%= f.label :paid, "Paid:", class: "control-label"%>
+	<%= f.label :paid, "Paid", class: "control-label"%>
 	<div class="controls">
 	<%= f.check_box :paid, {checked: paid_cache} %>
 	</div>
@@ -55,5 +55,6 @@
 
 	<div class="control-group"><div class="controls">
 	<%= submit_tag("Save changes", {:class => "btn btn-primary"})%>
+	<%= link_to "Back", root_path, class: "btn"%>
 	</div></div>
 <% end %>
