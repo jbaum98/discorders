@@ -7,6 +7,8 @@ gem 'strong_parameters'
 gem 'turbolinks'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
+gem "activerecord-import", ">= 0.2.0"
+gem "spreadsheet"
 
 
 group :development do

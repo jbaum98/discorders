@@ -11,6 +11,8 @@
 #  paid       :boolean
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  received   :boolean          default(FALSE)
+#  user_id    :integer
 #
 
 class Order < ActiveRecord::Base
