@@ -1,209 +1,208 @@
-Zach Rubin a6 2.0 1.0 1.0 yes
-Abe Teichei a4 1.0   yes
-Benjamin Klahr a3 1.0  1.0 yes
-Misha Saad a5 1.0   yes
-Brett Goodman a6  1.0  yes
-Alex Popolow a9 1.0  1.0 yes
-adam krakower a2 1.0 1.0 1.0 yes
-itai rekem a2 2.0 1.0 1.0 yes
-jonah bieber a7   1.0 yes
-jacob riegel a3 1.0 1.0 1.0 yes
-Adin Gitig a1 1.0  1.0 yes
-ethan citron a3 1.0 1.0 1.0 yes
-josh orenstein a2  1.0  yes
-eyal laurence a5 1.0   yes
-Julia Nevins a14   1.0 yes
-Ben Rogak A3 1.0   Yes
-Jon Steinberg   1.0  yes
-Joseph Icikson b2 1.0   yes
-Benji Cooper b11 2.0 2.0 2.0 yes
-Naomi Rosen b25 1.0 1.0 1.0 yes
-Max Gruber b11  1.0  yes
-Daniel Stecker b8 1.0 1.0 1.0 no
-Calli Halpern b16 1.0  1.0 yes
-Eli DuBois b8 1.0 1.0 1.0 yes
-Josh Weiss b11 1.0 1.0 1.0 yes
-Rafi Chesler b9 2.0 2.0 3.0 no
-Noah Schlesinger b9 1.0 1.0 2.0 yes
-Alec Rubin b11   1.0 yes
-Maya Treitmin b20  1.0 1.0 yes
-Jonah Klausner b9 1.0 1.0 1.0 yes
-Sam Tanchel b22 1.0  1.0 yes
-jacob varon b5  1.0 1.0 yes
-drew nuchims b6 1.0 1.0  yes
-harold fink b5 3.0 2.0 2.0 yes
-leia kessler b21  1.0 1.0 yes
-ethan lerman b5 2.0 2.0 1.0 yes
-benny witlin b6  1.0  yes
-alex kristal b7 1.0  1.0 yes
-jacob gutstein  b9 1.0 1.0 1.0 yes 
-esme bikales b15   1.0 yes
-amber zedeck b18   1.0 yes
-gabe sobell b9 1.0   yes
-martin rosen b3 1.0 1.0 1.0 yes
-solly zisser b12 1.0 1.0 1.0 yes
-daniel kushner b8  1.0  yes
-jacob richman b10 1.0  1.0 yes
-nathaniel j chevan b11  1.0 1.0 yes
-joey schluger b2 1.0 1.0 1.0 yes
-ian caminer b12 1.0   1.0 yes
-josh chazin b10 1.0 2.0 1.0 yes
-sam stamler b2   1.0 yes
-lia barnhard b21   1.0 yes
-geffen ohring b25 1.0   yes
-ben claar b12  1.0  yes
-harlan reiss b6   1.0 yes
-Benjamin Perla b11 2.0 1.0 2.0 yes
-jonah rosen b6  1.0  yes
-talia goodman b25 1.0 1.0 1.0 yes
-elliot efrat b7 1.0 1.0 1.0 yes
-rachel kroll b21 1.0 1.0 1.0 yes
-Elliot Kleinman b6 1.0 1.0 1.0 yes
-Matthew Benak b7   1.0 yes
-Ariella Savitz b18  1.0  yes
-Audrey Bachman b25 1.0 1.0 1.0 yes 
-Eddie Friedman B11 1.0   yes
-Maddy Soffer B22 1.0 1.0  yes
-Keren Idan B22  1.0  yes
-Josh Lerner b7  1.0  yes
-Jonathan Rand b6   1.0 yes
-Alex Schoenbart gc5/office   1.0 yes
-Sophia Danzig b25  1.0  yes
-hannah ball  b25   1.0 yes
-Clara Goldberger b16 1.0 1.0 1.0 yes
-Joel Reiter b5  1.0 1.0 yes
-Rachel Novick b17 1.0 1.0 1.0 yes
-Ethan Underweiser b3 1.0 2.0 2.0 yes
-Josh Lerner b7   1.0 yes
-Daniel Shemesh b10  1.0  yes
-Jake Waksbaum b10 1.0 1.0 1.0 Yes
-Alex Eisenstein b9  1.0  yes
-Nathan Finkle b6 1.0 1.0 2.0 yes
-Noa Gordon-Guterman B25 1.0 1.0  Yes
-Allie Rebenstock B25  1.0 1.0 Yes
-Laurel Fox B25 1.0  2.0 yes
-Daniel Rosenbaum B11 2.0 2.0 2.0 Yes
-Ethan Labi B6  1.0  Yes
-Hannah Margolis B17  1.0 2.0 yes
-Sammy Allen B9   1.0 Yes
-Aaron Lesserson Staff   1.0 Yes
-Margot Niss B21 1.0  1.0 Yes
-Zach Wax B3 1.0   Yes
-Lauren Abelow  A20   1.0 
-Jonathan Karlin B4 1.0 1.0  Yes
-Eitan Tsirulik B8 2.0 2.0 3.0 Yes
-Arielle Katz B20 1.0  1.0 Yes
-Yaakov Malomet Staff/A6 2.0 1.0  No
-Matt Drescher B9 1.0   
-Evan Ashley b5 1.0 1.0 1.0 yes
-Abby Lerner b17 1.0 1.0  yes
-Zoe Owens b19 1.0 1.0 1.0 no
-Jennafer (al hagova)   2.0  yes
-Seth Adelsburg   1.0 1.0 yes
-Asher Leffell B11 1.0 1.0 1.0 yes
-Jonny Keltz B2 1.0   yes
-Jakob Hoffman A1  1.0  yes
-Mitchell Black A21 1.0   yes
-Aviva Kamens B19 1.0   yes
-Alex Goldberg A6 1.0  2.0 yes
-Bryant Berkowitz A2   2.0 yes
-Ethan Ceresnew A3 1.0 1.0  yes
-Sam Margolis B5 3.0 3.0 3.0 yes
-Josh Glickman A2   1.0 yes
-Jacob Bass B6 1.0 1.0 1.0 yes
-Max Silverstone B12 1.0 1.0 1.0 yes
-Eli Siegal B3 1.0 1.0 1.0 yes
-Deena Danishefsky B19   1.0 yes
-Hannah Schoeffler B19 1.0  1.0 yes
-Adam Bernstein A2 1.0  1.0 yes
-Josh Shlefstein A3  2.0 2.0 yes
-Eitan Ben-David B10 1.0 1.0 1.0 yes
-Joshua Lehman A2 1.0 1.0  yes
-Ezra Feilbogen  3.0 3.0 3.0 yes
-Jacob Rosengarten B5  1.0  yes
-Aaron Lavitsky A2  1.0 1.0 yes
-Asher Brenner A7 1.0 1.0 1.0 yes
-Matthew Bloom A21 1.0   yes
-Jonah Holden A-21   1.0 yes
-Dylan Fineman A-6 1.0   yes
-Jeremy Steinman A-6  1.0 1.0 yes
-Max Steinman B-3 1.0 1.0 1.0 yes
-Noah Schutttt B-12 2.0 1.0 2.0 yes
-Lior Ben-David A-6  1.0  yes
-Sam Platek B12 4.0 2.0 4.0 yes
-Eli Kanfer A-1   1.0 yes
-Ari Solomon B-4 1.0 1.0 1.0 yes
-Gabe Pont B-10 1.0  1.0 yes
-Daniel Zipkowitz B12 1.0  1.0 yes
-Aaron Levitt A-5 1.0   yes
-Mathew Harrison A-21 1.0   yes
-Josh Epstein A-4 1.0   yes
-Jeremy davis B-6   1.0 yes
-Ethan Silberstein B-9 1.0 1.0 2.0 yes
-Moshe Tambor A-7 1.0 1.0 1.0 yes
-Shosh Rosenzweig B-25 1.0 2.0 1.0 yes
-Jonathan Mack B-6 1.0 1.0 1.0 yes
-Benji Weinstein A-3 2.0  3.0 yes
-Jacob Gorman B-6 3.0 1.0 1.0 yes
-Sam Labovitz A-1 1.0  1.0 yes
-Zoe Bernstein A-20 1.0   yes
-Jacob Schwartz A-9 1.0  1.0 yes
-Alec Stewart B-10  1.0 1.0 yes
-Maxim Freedeland A-4 1.0 1.0  yes
-Cory Buhler B-4 1.0 1.0  yes
-Josh Bolaniecki A-3  1.0 1.0 yes
-Sydney Shaiman B-25   1.0 yes
-Emma Cantor n/a   1.0 yes
-Eli Allison B-4  1.0  yes
-Jessie Jakoby B-25  1.0  yes
-Jacob Lefkowitz B-7 1.0 1.0 1.0 yes
-Lexi Wenger A-13 1.0  1.0 yes
-Moris Goldstein A-3  1.0  yes
-Gabe Duftler A-7 1.0   yes
-Sammy Libchaber A-1  1.0  yes
-Didi Kalmanofsky A-21 1.0   yes
-David Shephard B-9   1.0 yes
-Yona/Noam Kornsgold B-12 2.0 2.0 2.0 yes
-Josh Leeman B-16   1.0 yes
-Rachel Pomeranz B-17 1.0 1.0  yes
-Jonah Seidenfeld A-6 1.0 1.0 1.0 yes
-Elle Schanzer A-3  1.0  yes
-Talia Cohen B-22   1.0 yes
-Jacob Wachs A-6 1.0 1.0 1.0 yes
-Ethan Okoshi B-8 2.0 2.0 2.0 yes
-Jacob David A-10 1.0  1.0 yes
-Mikey Weiss B-6 1.0 1.0 1.0 yes
-Yair Wall A-21 2.0   yes
-Sam Schwartz B-4  1.0 1.0 yes
-Louis Rosuch A-7 1.0  1.0 yes
-Isaac Neustadt B-11 1.0 1.0  yes
-Lyndsay Lapidus A-19  1.0 1.0 yes
-Sylvie Moscovitz B-25   2.0 yes
-Oliver Feder B-7 2.0 2.0 2.0 yes
-Eve Heller B-20 3.0 2.0 2.0 yes
-Matan Mann B-8 1.0 1.0 1.0 yes
-Galit Weiner b-21  1.0 1.0 yes
-Deen Chhahira A-1   1.0 yes
-Ethan Heller B-12 1.0  1.0 yes
-Aviv Fedida A-21 1.0 1.0  yes
-Zachary Morganstein B-5 1.0   yes
-Aaron Ocken B-6 1.0  1.0 yes
-Chava Aronin N/A   1.0 yes
-Rita Feder A-20   1.0 yes
-Adam Schwartz A-5 1.0  1.0 yes
-Ellie Eisenberg B-16   1.0 yes
-Emma Pont A-16 1.0   yes
-Ethan Michaelson A-5   1.0 yes
-Oron Tal A-4   1.0 yes
-Paulina Weinrich B22 1.0   yes
-Abby Brauer Staff A15  1.0  yes
-Roy Roldan b11 2.0 2.0 2.0 yes
-Eli Weiss a9 1.0   yes
-Sammy Sandler b11 1.0   yes
-Matan Skolnick b8 1.0   yes
-Gabe Fisher b4 1.0 1.0 1.0 yes
-Ben Taub a1 1.0 1.0  yes
-Benjamin Glicksman b3 1.0   yes
-Elan Kane Staff  A7 1.0  1.0 yes
-Matt Horowitz Staff A1   1.0 yes
-mark abramovitz b7 1.0  1.0 yes
+Zach Rubin!@#a6!@#2.0!@#1.0!@#1.0!@#yes
+Abe Teichei!@#a4!@#1.0!@#!@#!@#yes
+Benjamin Klahr!@#a3!@#1.0!@#!@#1.0!@#yes
+Misha Saad!@#a5!@#1.0!@#!@#!@#yes
+Brett Goodman!@#a6!@#!@#1.0!@#!@#yes
+Alex Popolow!@#a9!@#1.0!@#!@#1.0!@#yes
+adam krakower!@#a2!@#1.0!@#1.0!@#1.0!@#yes
+itai rekem!@#a2!@#2.0!@#1.0!@#1.0!@#yes
+jonah bieber!@#a7!@#!@#!@#1.0!@#yes
+jacob riegel!@#a3!@#1.0!@#1.0!@#1.0!@#yes
+Adin Gitig!@#a1!@#1.0!@#!@#1.0!@#yes
+ethan citron!@#a3!@#1.0!@#1.0!@#1.0!@#yes
+josh orenstein!@#a2!@#!@#1.0!@#!@#yes
+eyal laurence!@#a5!@#1.0!@#!@#!@#yes
+Julia Nevins!@#a14!@#!@#!@#1.0!@#yes
+Ben Rogak!@#A3!@#1.0!@#!@#!@#Yes
+Joseph Icikson!@#b2!@#1.0!@#!@#!@#yes
+Benji Cooper!@#b11!@#2.0!@#2.0!@#2.0!@#yes
+Naomi Rosen!@#b25!@#1.0!@#1.0!@#1.0!@#yes
+Max Gruber!@#b11!@#!@#1.0!@#!@#yes
+Daniel Stecker!@#b8!@#1.0!@#1.0!@#1.0!@#no
+Calli Halpern!@#b16!@#1.0!@#!@#1.0!@#yes
+Eli DuBois!@#b8!@#1.0!@#1.0!@#1.0!@#yes
+Josh Weiss!@#b11!@#1.0!@#1.0!@#1.0!@#yes
+Rafi Chesler!@#b9!@#2.0!@#2.0!@#3.0!@#no
+Noah Schlesinger!@#b9!@#1.0!@#1.0!@#2.0!@#yes
+Alec Rubin!@#b11!@#!@#!@#1.0!@#yes
+Maya Treitmin!@#b20!@#!@#1.0!@#1.0!@#yes
+Jonah Klausner!@#b9!@#1.0!@#1.0!@#1.0!@#yes
+Sam Tanchel!@#b22!@#1.0!@#!@#1.0!@#yes
+jacob varon!@#b5!@#!@#1.0!@#1.0!@#yes
+drew nuchims!@#b6!@#1.0!@#1.0!@#!@#yes
+harold fink!@#b5!@#3.0!@#2.0!@#2.0!@#yes
+leia kessler!@#b21!@#!@#1.0!@#1.0!@#yes
+ethan lerman!@#b5!@#2.0!@#2.0!@#1.0!@#yes
+benny witlin!@#b6!@#!@#1.0!@#!@#yes
+alex kristal!@#b7!@#1.0!@#!@#1.0!@#yes
+jacob gutstein !@#b9!@#1.0!@#1.0!@#1.0!@#yes 
+esme bikales!@#b15!@#!@#!@#1.0!@#yes
+amber zedeck!@#b18!@#!@#!@#1.0!@#yes
+gabe sobell!@#b9!@#1.0!@#!@#!@#yes
+martin rosen!@#b3!@#1.0!@#1.0!@#1.0!@#yes
+solly zisser!@#b12!@#1.0!@#1.0!@#1.0!@#yes
+daniel kushner!@#b8!@#!@#1.0!@#!@#yes
+jacob richman!@#b10!@#1.0!@#!@#1.0!@#yes
+nathaniel j chevan!@#b11!@#!@#1.0!@#1.0!@#yes
+joey schluger!@#b2!@#1.0!@#1.0!@#1.0!@#yes
+ian caminer!@#b12!@#1.0!@# !@#1.0!@#yes
+josh chazin!@#b10!@#1.0!@#2.0!@#1.0!@#yes
+sam stamler!@#b2!@#!@#!@#1.0!@#yes
+lia barnhard!@#b21!@#!@#!@#1.0!@#yes
+geffen ohring!@#b25!@#1.0!@#!@#!@#yes
+ben claar!@#b12!@#!@#1.0!@#!@#yes
+harlan reiss!@#b6!@#!@#!@#1.0!@#yes
+Benjamin Perla!@#b11!@#2.0!@#1.0!@#2.0!@#yes
+jonah rosen!@#b6!@#!@#1.0!@#!@#yes
+talia goodman!@#b25!@#1.0!@#1.0!@#1.0!@#yes
+elliot efrat!@#b7!@#1.0!@#1.0!@#1.0!@#yes
+rachel kroll!@#b21!@#1.0!@#1.0!@#1.0!@#yes
+Elliot Kleinman!@#b6!@#1.0!@#1.0!@#1.0!@#yes
+Matthew Benak!@#b7!@#!@#!@#1.0!@#yes
+Ariella Savitz!@#b18!@#!@#1.0!@#!@#yes
+Audrey Bachman!@#b25!@#1.0!@#1.0!@#1.0!@#yes 
+Eddie Friedman!@#B11!@#1.0!@#!@#!@#yes
+Maddy Soffer!@#B22!@#1.0!@#1.0!@#!@#yes
+Keren Idan!@#B22!@#!@#1.0!@#!@#yes
+Josh Lerner!@#b7!@#!@#1.0!@#!@#yes
+Jonathan Rand!@#b6!@#!@#!@#1.0!@#yes
+Alex Schoenbart!@#gc5/office!@#!@#!@#1.0!@#yes
+Sophia Danzig!@#b25!@#!@#1.0!@#!@#yes
+hannah ball !@#b25!@#!@#!@#1.0!@#yes
+Clara Goldberger!@#b16!@#1.0!@#1.0!@#1.0!@#yes
+Joel Reiter!@#b5!@#!@#1.0!@#1.0!@#yes
+Rachel Novick!@#b17!@#1.0!@#1.0!@#1.0!@#yes
+Ethan Underweiser!@#b3!@#1.0!@#2.0!@#2.0!@#yes
+Josh Lerner!@#b7!@#!@#!@#1.0!@#yes
+Daniel Shemesh!@#b10!@#!@#1.0!@#!@#yes
+Jake Waksbaum!@#b10!@#1.0!@#1.0!@#1.0!@#Yes
+Alex Eisenstein!@#b9!@#!@#1.0!@#!@#yes
+Nathan Finkle!@#b6!@#1.0!@#1.0!@#2.0!@#yes
+Noa Gordon-Guterman!@#B25!@#1.0!@#1.0!@#!@#Yes
+Allie Rebenstock!@#B25!@#!@#1.0!@#1.0!@#Yes
+Laurel Fox!@#B25!@#1.0!@#!@#2.0!@#yes
+Daniel Rosenbaum!@#B11!@#2.0!@#2.0!@#2.0!@#Yes
+Ethan Labi!@#B6!@#!@#1.0!@#!@#Yes
+Hannah Margolis!@#B17!@#!@#1.0!@#2.0!@#yes
+Sammy Allen!@#B9!@#!@#!@#1.0!@#Yes
+Aaron Lesserson!@#Staff!@#!@#!@#1.0!@#Yes
+Margot Niss!@#B21!@#1.0!@#!@#1.0!@#Yes
+Zach Wax!@#B3!@#1.0!@#!@#!@#Yes
+Lauren Abelow !@#A20!@#!@#!@#1.0!@#
+Jonathan Karlin!@#B4!@#1.0!@#1.0!@#!@#Yes
+Eitan Tsirulik!@#B8!@#2.0!@#2.0!@#3.0!@#Yes
+Arielle Katz!@#B20!@#1.0!@#!@#1.0!@#Yes
+Yaakov Malomet!@#Staff/A6!@#2.0!@#1.0!@#!@#No
+Matt Drescher!@#B9!@#1.0!@#!@#!@#
+Evan Ashley!@#b5!@#1.0!@#1.0!@#1.0!@#yes
+Abby Lerner!@#b17!@#1.0!@#1.0!@#!@#yes
+Zoe Owens!@#b19!@#1.0!@#1.0!@#1.0!@#no
+Jennafer (al hagova)!@#!@#!@#2.0!@#!@#yes
+Seth Adelsburg!@#!@#!@#1.0!@#1.0!@#yes
+Asher Leffell!@#B11!@#1.0!@#1.0!@#1.0!@#yes
+Jonny Keltz!@#B2!@#1.0!@#!@#!@#yes
+Jakob Hoffman!@#A1!@#!@#1.0!@#!@#yes
+Mitchell Black!@#A21!@#1.0!@#!@#!@#yes
+Aviva Kamens!@#B19!@#1.0!@#!@#!@#yes
+Alex Goldberg!@#A6!@#1.0!@#!@#2.0!@#yes
+Bryant Berkowitz!@#A2!@#!@#!@#2.0!@#yes
+Ethan Ceresnew!@#A3!@#1.0!@#1.0!@#!@#yes
+Sam Margolis!@#B5!@#3.0!@#3.0!@#3.0!@#yes
+Josh Glickman!@#A2!@#!@#!@#1.0!@#yes
+Jacob Bass!@#B6!@#1.0!@#1.0!@#1.0!@#yes
+Max Silverstone!@#B12!@#1.0!@#1.0!@#1.0!@#yes
+Eli Siegal!@#B3!@#1.0!@#1.0!@#1.0!@#yes
+Deena Danishefsky!@#B19!@#!@#!@#1.0!@#yes
+Hannah Schoeffler!@#B19!@#1.0!@#!@#1.0!@#yes
+Adam Bernstein!@#A2!@#1.0!@#!@#1.0!@#yes
+Josh Shlefstein!@#A3!@#!@#2.0!@#2.0!@#yes
+Eitan Ben-David!@#B10!@#1.0!@#1.0!@#1.0!@#yes
+Joshua Lehman!@#A2!@#1.0!@#1.0!@#!@#yes
+Ezra Feilbogen!@#!@#3.0!@#3.0!@#3.0!@#yes
+Jacob Rosengarten!@#B5!@#!@#1.0!@#!@#yes
+Aaron Lavitsky!@#A2!@#!@#1.0!@#1.0!@#yes
+Asher Brenner!@#A7!@#1.0!@#1.0!@#1.0!@#yes
+Matthew Bloom!@#A21!@#1.0!@#!@#!@#yes
+Jonah Holden!@#A-21!@#!@#!@#1.0!@#yes
+Dylan Fineman!@#A-6!@#1.0!@#!@#!@#yes
+Jeremy Steinman!@#A-6!@#!@#1.0!@#1.0!@#yes
+Max Steinman!@#B-3!@#1.0!@#1.0!@#1.0!@#yes
+Noah Schutttt!@#B-12!@#2.0!@#1.0!@#2.0!@#yes
+Lior Ben-David!@#A-6!@#!@#1.0!@#!@#yes
+Sam Platek!@#B12!@#4.0!@#2.0!@#4.0!@#yes
+Eli Kanfer!@#A-1!@#!@#!@#1.0!@#yes
+Ari Solomon!@#B-4!@#1.0!@#1.0!@#1.0!@#yes
+Gabe Pont!@#B-10!@#1.0!@#!@#1.0!@#yes
+Daniel Zipkowitz!@#B12!@#1.0!@#!@#1.0!@#yes
+Aaron Levitt!@#A-5!@#1.0!@#!@#!@#yes
+Mathew Harrison!@#A-21!@#1.0!@#!@#!@#yes
+Josh Epstein!@#A-4!@#1.0!@#!@#!@#yes
+Jeremy davis!@#B-6!@#!@#!@#1.0!@#yes
+Ethan Silberstein!@#B-9!@#1.0!@#1.0!@#2.0!@#yes
+Moshe Tambor!@#A-7!@#1.0!@#1.0!@#1.0!@#yes
+Shosh Rosenzweig!@#B-25!@#1.0!@#2.0!@#1.0!@#yes
+Jonathan Mack!@#B-6!@#1.0!@#1.0!@#1.0!@#yes
+Benji Weinstein!@#A-3!@#2.0!@#!@#3.0!@#yes
+Jacob Gorman!@#B-6!@#3.0!@#1.0!@#1.0!@#yes
+Sam Labovitz!@#A-1!@#1.0!@#!@#1.0!@#yes
+Zoe Bernstein!@#A-20!@#1.0!@#!@#!@#yes
+Jacob Schwartz!@#A-9!@#1.0!@#!@#1.0!@#yes
+Alec Stewart!@#B-10!@#!@#1.0!@#1.0!@#yes
+Maxim Freedeland!@#A-4!@#1.0!@#1.0!@#!@#yes
+Cory Buhler!@#B-4!@#1.0!@#1.0!@#!@#yes
+Josh Bolaniecki!@#A-3!@#!@#1.0!@#1.0!@#yes
+Sydney Shaiman!@#B-25!@#!@#!@#1.0!@#yes
+Emma Cantor!@#n/a!@#!@#!@#1.0!@#yes
+Eli Allison!@#B-4!@#!@#1.0!@#!@#yes
+Jessie Jakoby!@#B-25!@#!@#1.0!@#!@#yes
+Jacob Lefkowitz!@#B-7!@#1.0!@#1.0!@#1.0!@#yes
+Lexi Wenger!@#A-13!@#1.0!@#!@#1.0!@#yes
+Moris Goldstein!@#A-3!@#!@#1.0!@#!@#yes
+Gabe Duftler!@#A-7!@#1.0!@#!@#!@#yes
+Sammy Libchaber!@#A-1!@#!@#1.0!@#!@#yes
+Didi Kalmanofsky!@#A-21!@#1.0!@#!@#!@#yes
+David Shephard!@#B-9!@#!@#!@#1.0!@#yes
+Yona/Noam Kornsgold!@#B-12!@#2.0!@#2.0!@#2.0!@#yes
+Josh Leeman!@#B-16!@#!@#!@#1.0!@#yes
+Rachel Pomeranz!@#B-17!@#1.0!@#1.0!@#!@#yes
+Jonah Seidenfeld!@#A-6!@#1.0!@#1.0!@#1.0!@#yes
+Elle Schanzer!@#A-3!@#!@#1.0!@#!@#yes
+Talia Cohen!@#B-22!@#!@#!@#1.0!@#yes
+Jacob Wachs!@#A-6!@#1.0!@#1.0!@#1.0!@#yes
+Ethan Okoshi!@#B-8!@#2.0!@#2.0!@#2.0!@#yes
+Jacob David!@#A-10!@#1.0!@#!@#1.0!@#yes
+Mikey Weiss!@#B-6!@#1.0!@#1.0!@#1.0!@#yes
+Yair Wall!@#A-21!@#2.0!@#!@#!@#yes
+Sam Schwartz!@#B-4!@#!@#1.0!@#1.0!@#yes
+Louis Rosuch!@#A-7!@#1.0!@#!@#1.0!@#yes
+Isaac Neustadt!@#B-11!@#1.0!@#1.0!@#!@#yes
+Lyndsay Lapidus!@#A-19!@#!@#1.0!@#1.0!@#yes
+Sylvie Moscovitz!@#B-25!@#!@#!@#2.0!@#yes
+Oliver Feder!@#B-7!@#2.0!@#2.0!@#2.0!@#yes
+Eve Heller!@#B-20!@#3.0!@#2.0!@#2.0!@#yes
+Matan Mann!@#B-8!@#1.0!@#1.0!@#1.0!@#yes
+Galit Weiner!@#b-21!@#!@#1.0!@#1.0!@#yes
+Deen Chhahira!@#A-1!@#!@#!@#1.0!@#yes
+Ethan Heller!@#B-12!@#1.0!@#!@#1.0!@#yes
+Aviv Fedida!@#A-21!@#1.0!@#1.0!@#!@#yes
+Zachary Morganstein!@#B-5!@#1.0!@#!@#!@#yes
+Aaron Ocken!@#B-6!@#1.0!@#!@#1.0!@#yes
+Chava Aronin!@#N/A!@#!@#!@#1.0!@#yes
+Rita Feder!@#A-20!@#!@#!@#1.0!@#yes
+Adam Schwartz!@#A-5!@#1.0!@#!@#1.0!@#yes
+Ellie Eisenberg!@#B-16!@#!@#!@#1.0!@#yes
+Emma Pont!@#A-16!@#1.0!@#!@#!@#yes
+Ethan Michaelson!@#A-5!@#!@#!@#1.0!@#yes
+Oron Tal!@#A-4!@#!@#!@#1.0!@#yes
+Paulina Weinrich!@#B22!@#1.0!@#!@#!@#yes
+Abby Brauer!@#Staff A15!@#!@#1.0!@#!@#yes
+Roy Roldan!@#b11!@#2.0!@#2.0!@#2.0!@#yes
+Eli Weiss!@#a9!@#1.0!@#!@#!@#yes
+Sammy Sandler!@#b11!@#1.0!@#!@#!@#yes
+Matan Skolnick!@#b8!@#1.0!@#!@#!@#yes
+Gabe Fisher!@#b4!@#1.0!@#1.0!@#1.0!@#yes
+Ben Taub!@#a1!@#1.0!@#1.0!@#!@#yes
+Benjamin Glicksman!@#b3!@#1.0!@#!@#!@#yes
+Elan Kane!@#Staff  A7!@#1.0!@#!@#1.0!@#yes
+Matt Horowitz!@#Staff A1!@#!@#!@#1.0!@#yes
+mark abramovitz!@#b7!@#1.0!@#!@#1.0!@#yes
