@@ -6,6 +6,10 @@ class OrdersController < ApplicationController
     unless params['name'].nil? and params['bunk'].nil?
       params['name']&&=params['name'].titleize
       params['bunk']&&=params['bunk'].capitalize
+      match_data = /([A,a,B,b])(\d{1,2})/.match params['bunk']
+              if match_data
+                params['bunk'] = "#{match_data[1].capitalize}-#{match_data[2]}"
+              end
       @orders = []
       params.each_key do |term|
         if @@atts.include? term and not params[term].empty?
