@@ -20,6 +20,11 @@ class Order < ActiveRecord::Base
 
   attr_accessible :name, :bunk, :white, :orange, :blue, :paid, :received, :price
   before_save {self.name = name.titleize; self.bunk=bunk.capitalize}
+  before_save {match_data = /([A,a,B,b])(\d{1,2})/.match self.bunk
+              if match_data
+                self.bunk = "#{match_data[1].capitalize}-#{match_data[2]}"
+              end
+              }
   
   def total
   	self.blue+self.white+self.orange
@@ -30,6 +35,7 @@ class Order < ActiveRecord::Base
   end
 
   validates :name, :bunk, presence: true
+  validates :name, uniqueness: true
   validate :ordered_discs
   validate :paid_before_received
 
