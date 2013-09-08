@@ -68,8 +68,8 @@ td.show_bold, label.show_bold{
 /* header */
 
 #logo {
+  position:absolute;
   float: left;
-  margin-right: 10px;
   font-size: 1.7em;
   color: white;
   text-transform: uppercase;
@@ -77,10 +77,15 @@ td.show_bold, label.show_bold{
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
-  width: calc(95% - 505px);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  box-sizing: border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  padding-right: 520px;
+  width: 100%;
+  min-width:100;
   &:hover {
     color: white;
     text-decoration: none;
@@ -89,6 +94,17 @@ td.show_bold, label.show_bold{
 
 div.hero-unit {
   padding: 20px
+
+}
+
+nav {
+  float:right;
+  padding: 0;
+  padding-left: 50;
+  top: 0px;
+  bottom: 0px;
+  right:0px;
+  width: 520px; 
 }
 
 /* footer */
