@@ -35,7 +35,7 @@ class Order < ActiveRecord::Base
   end
 
   validates :name, :bunk, presence: true
-  validates :name, uniqueness: {scope: :user_id}
+  validates :name, uniqueness: {scope: [:user_id, :bunk]}
   validate :ordered_discs
   validate :paid_before_received
 
