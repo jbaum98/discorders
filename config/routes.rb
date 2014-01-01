@@ -12,6 +12,8 @@ Disc_orders::Application.routes.draw do
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 
   resources :sessions, only: [:new, :create, :destroy]
+
+  match '/names', to: 'orders#names'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

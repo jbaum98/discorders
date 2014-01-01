@@ -33,6 +33,9 @@ class OrdersController < ApplicationController
     @orders.sort_by!{ |order| order[params[:sort]]} unless ['paid', 'received'].include? params[:sort]
     @orders.sort_by!{ |order| order[params[:sort]] ? 0 : 1} if ['paid', 'received'].include? params[:sort]
     @orders.reverse! if (params[:reverse] == "true")
+
+    
+    redirect_to @orders[0] if @orders.size == 1
   end
 
   # GET /orders/1
@@ -128,4 +131,16 @@ class OrdersController < ApplicationController
     all_orders.each {|order| @price_total+=order.price}
   end
 
+  def search
+    orders = if signed_in?
+      current_user.orders
+    else
+      Order.find_all_by_user_id(nil)
+    end
+    @names = orders.collect do |order|
+      "{'value': '#{order.name}',
+      'tokens': #{order.name.split(' ')}},"
+    end
+    @names = @names.uniq.join("\n").chomp(',')
+  end
 end

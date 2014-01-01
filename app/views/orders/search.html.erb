@@ -10,6 +10,8 @@
 	</div>
 </div>
 
+<br>
+
 <span class="control-group">
   <dt><%= label_tag(:bunk, "Bunk:", class: "control-label") %></dt>
   <div class="controls">
@@ -29,3 +31,10 @@
 </div>
 <% end %>
 </dl>
+
+<script>
+$('input.search-query#name').typeahead({
+  name: 'name',
+  local: <%=raw "[ #{@names} ]"%>
+});
+</script>
