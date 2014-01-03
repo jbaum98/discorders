@@ -131,16 +131,20 @@ class OrdersController < ApplicationController
     all_orders.each {|order| @price_total+=order.price}
   end
 
-  def search
+  def names
     orders = if signed_in?
       current_user.orders
     else
       Order.find_all_by_user_id(nil)
     end
-    @names = orders.collect do |order|
-      "{'value': '#{order.name}',
-      'tokens': #{order.name.split(' ')}},"
-    end
-    @names = @names.uniq.join("\n").chomp(',')
+    data = orders.collect do |order|
+      {value: order.name,
+        tokens: order.name.split(' ')}
+      end
+    data.uniq!
+    respond_to {|format| 
+      format.html { redirect_to '/404.html'}
+      format.json {render json: data}}
   end
+
 end

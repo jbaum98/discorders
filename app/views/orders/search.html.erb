@@ -35,6 +35,10 @@
 <script>
 $('input.search-query#name').typeahead({
   name: 'name',
-  local: <%=raw "[ #{@names} ]"%>
+  prefetch: {
+    url: '../names.json',
+    ttl: 0
+  }
 });
 </script>
+
