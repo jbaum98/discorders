@@ -1,9 +1,7 @@
-@import "bootstrap";
-
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
-
+$grayLight: #999;
 
 /* universal */
 
@@ -12,7 +10,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 600px;
 }
 
 section {
@@ -116,9 +114,9 @@ footer {
   border-top: 1px solid $grayMediumLight;
   color: $grayLight;
   a {
-    color: $gray;
+    color: gray;
     &:hover {
-      color: $grayDarker;
+      color: darken(gray, 5);
     }
   }
   small {
@@ -191,17 +189,4 @@ dd, dt, dl{
   @extend .control-group;
   @extend .error;
   display: inline !important;
-}
-
-.dropdown-toggle {
-  height:20
-}
-
-.dropdown-menu {
-  min-width: 100;
-  li {
-    a {
-    padding-left:12
-    }
-  }
 }

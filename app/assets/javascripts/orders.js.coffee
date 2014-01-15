@@ -7,7 +7,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 
-$ ->
+jQuery ->
 	`jQuery.expr[':'].regex = function(elem, index, match) {
 	    var matchParams = match[3].split(','),
 	        validLabels = /^(data|css):/,
@@ -21,5 +21,5 @@ $ ->
 	    return regex.test(jQuery(elem)[attr.method](attr.property));
 	}`
 
-	$("input:regex(id, order_(blue|orange|white))").on "change", ->
-	    $("label[for='order_paid']").text("Paid ($"+((parseInt($(order_orange).val())+parseInt($(order_blue).val())+parseInt($(order_white).val()))*8)+")")
+	jQuery("input:regex(id, order_(blue|orange|white))").on "change", ->
+	    jQuery("label[for='order_paid']").text("Paid ($"+((parseInt($(order_orange).val())+parseInt($(order_blue).val())+parseInt($(order_white).val()))*8)+")")

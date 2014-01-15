@@ -1,52 +1,82 @@
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
     <h1>All Orders</h1>
 
-<table class = "table table-border table-hover">
-  <tr>
-    <th><%= link_to(params.merge({action: 'index', sort: 'name', reverse: !(params[:reverse]=="true")})) do %>
-        Name <i class=<%= if params[:sort]=='name' && !params[:reverse].nil? ; params[:reverse]=='true' ? "icon-chevron-up" : "icon-chevron-down" end%> ></i><%end%></th>
-    <th><%= link_to(params.merge({action: 'index', sort: 'bunk', reverse: !(params[:reverse]=="true")})) do %>
-        Bunk <i class=<%= if params[:sort]=='bunk' && !params[:reverse].nil? ; params[:reverse]=='true' ? "icon-chevron-up" : "icon-chevron-down" end%> ></i><%end%></th>
-    <th>White</th>
-    <th>Orange</th>
-    <th>Blue</th>
-    <th><%= link_to(params.merge({action: 'index', sort: 'paid', reverse: !(params[:reverse]=="true")})) do %>
-        Paid/Due <i class=<%= if params[:sort]=='paid' && !params[:reverse].nil? ; params[:reverse]=='true' ? "icon-chevron-up" : "icon-chevron-down" end%> ></i><%end%></th>
-    <th><%= link_to(params.merge({action: 'index', sort: 'received', reverse: !(params[:reverse]=="true")})) do %>
-        Received <i class=<%= if params[:sort]=='received' && !params[:reverse].nil? ; params[:reverse]=='true' ? "icon-chevron-up" : "icon-chevron-down" end%> ></i><%end%></th>
-    <th></th>
-  </tr>
+    <table class="table table-border table-hover">
+        <tr>
+            <th>
+            <%= link_to(params.merge({action: 'index', sort: 'name', reverse: !(params[:reverse]=="true")})) do %>Name
+            <%end%></th>
 
-<% @orders.each do |order| %>
-  <tr>
-    <td><%= order.name %></td>
-    <td><%= order.bunk %></td>
-    <td><%= order.white %></td>
-    <td><%= order.orange %></td>
-    <td><%= order.blue %></td>
-    <td id = "<%= order.paid ? 'paid' : 'notpaid'%>">
-    <%= if order.paid
-    "$#{order.price}"
-    else
-    "Not Paid ($#{order.price})" end%></td>
-    <%received_word = order.received ?  "Yes" : 'No'%>
-    <%old_params = params || {}%>
-    <td><%= link_to received_word, order_path(order, :order => { :received => !order.received}, :old_params => old_params), :method => :put%></td>
-    <td>
-        <div class="btn-group">
-    <%= link_to(order, class: "btn btn-primary") do%>
-        <i class="icon-user icon-white"></i> View
-    <% end %>
-    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <th>
+            <%= link_to(params.merge({action: 'index', sort: 'bunk', reverse: !(params[:reverse]=="true")})) do %>Bunk
+            <%end%></th>
+
+            <th>White</th>
+
+            <th>Orange</th>
+
+            <th>Blue</th>
+
+            <th>
+            <%= link_to(params.merge({action: 'index', sort: 'paid', reverse: !(params[:reverse]=="true")})) do %>Paid/Due
+            <%end%></th>
+
+            <th>
+            <%= link_to(params.merge({action: 'index', sort: 'received', reverse: !(params[:reverse]=="true")})) do %>Received
+            <%end%></th>
+
+            <th></th>
+        </tr><% @orders.each do |order| %>
+
+        <tr>
+            <td><%= order.name %></td>
+
+            <td><%= order.bunk %></td>
+
+            <td><%= order.white %></td>
+
+            <td><%= order.orange %></td>
+
+            <td><%= order.blue %></td>
+
+            <td id="<%= order.paid ? 'paid' : 'notpaid'%>"><%= if order.paid
+                "$#{order.price}"
+                else
+                "Not Paid ($#{order.price})" end%></td><%received_word = order.received ?  "Yes" : 'No'%><%old_params = params || {}%>
+
+            <td>
+            <%= link_to received_word, order_path(order, :order => { :received => !order.received}, :old_params => old_params), :method => :put%></td>
+
+            <td>
+                <div class="btn-group">
+                    <%= link_to(order, class: "btn btn-default", type: "button") do%>
+                    <span class="glyphicon glyphicon-eye-open"></span> View <% end %>
+
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
     <ul class="dropdown-menu">
-        <li><%= link_to(edit_order_path(order)) do %>
-            <i class="icon-pencil"></i> Edit
-        <% end %></li>
-        <li><%= link_to(order, method: :delete, data: { confirm: 'Are you sure?' }) do%>
-            <i class="icon-trash"></i> Delete
-        <% end %></li>
-  </ul>
-</div>
-    </td>
-<% end %>
-</table>
-<%= link_to "New Order", new_order_path, class: "btn btn-primary"%>
+      <li><a href="#">Dropdown link</a></li>
+      <li><a href="#">Dropdown link</a></li>
+    </ul>
+
+
+                    <ul class="dropdown-menu" role="menu" >
+                        <li><%= link_to(edit_order_path(order)) do %> Edit
+                        <% end %></li>
+
+                        <li>
+                        <%= link_to(order, method: :delete, data: { confirm: 'Are you sure?' }) do%>
+                        Delete <% end %></li>
+                    </ul>
+                </div>
+            </td><% end %>
+        </tr>
+    </table><%= link_to "New Order", new_order_path, class: "btn btn-primary"%>
+</body>
+</html>

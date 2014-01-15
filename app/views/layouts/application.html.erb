@@ -1,10 +1,13 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
+    <%= minify_include "jquery.js" %>
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <%= minify_include "bootstrap.css" %>
     <%= minify_include "typeahead.js" %>
+    <%= minify_include "bootstrap.js" %>
     <%= render 'layouts/shim' %>
   </head>
   <body>
