@@ -13,7 +13,7 @@ Disc_orders::Application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  match '/names', to: 'orders#names'
+  match '/data', to: 'orders#data'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

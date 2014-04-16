@@ -2,29 +2,16 @@
 <h1>Find An Order</h1>
 
 <dl>
-<%= form_tag("/index", :method => "post", class: "form-horizontal") do %>
+<%= form_tag("/index", :method => "post", class: "form-horizontal", id: 'search_form') do %>
 <div class="control-group">
-  <dt><%= label_tag(:name, "Name:", class: "control-label") %></dt>
+  <dt><%= label_tag(:search, "Name:", class: "control-label") %></dt>
 	<div class="controls">
-  <dd><%= text_field_tag(:name, nil, class: "search-query") %></dd>
+  <dd><%= text_field_tag(:search, nil, class: "search-query") %></dd>
 	</div>
 </div>
 
-<br>
-
-<span class="control-group">
-  <dt><%= label_tag(:bunk, "Bunk:", class: "control-label") %></dt>
-  <div class="controls">
-  <dd><%= text_field_tag(:bunk, nil, class: "search-query")%><dd>
-  </div>
-</span> 
-
 <div class="control-group">
-	<div class="controls">
-  <%= label_tag(:needy, "Not received only", id: 'needy') %>
-  <%= check_box_tag(:needy) %>
-
-  <br>
+  <input id="id_array" name="id_array" type="hidden">
   <%= submit_tag("Search", {:class => "btn btn-primary"}) %>
   <%= link_to "Back", root_path, class: "btn"%>
   	</div>
@@ -33,12 +20,45 @@
 </dl>
 
 <script>
-$('input.search-query#name').typeahead({
-  name: 'name',
-  prefetch: {
-    url: '../names.json',
-    ttl: 0
-  }
+var discs = new Bloodhound({
+  datumTokenizer: function (data) {return data.name.split(' ').concat( data.bunk.split("-")[1]).concat(data.bunk).concat(data.bunk.split("-").join(''))},
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  prefetch: {url:"../data.json", ttl: 1}
 });
+
+discs.initialize()
+
+$('.search-query').typeahead({
+  // `ttAdapter` wraps the suggestion engine in an adapter that
+  // is compatible with the typeahead jQuery plugin
+  hint: true,
+  highlight: true},
+  {
+    source: discs.ttAdapter(),
+    displayKey: 'name',
+    templates: {
+      empty: "<i>No matches</i>",
+      suggestion: function (suggestion) {
+        return "<p><b>" + suggestion.name + "</b> - <small>" + suggestion.bunk + "</small></p>"
+      }
+    }
+});
+
+search = function (query) {
+  output = []
+  discs.ttAdapter()(query, function (suggestions) {  
+    jQuery.each(suggestions, function (index, item) {
+      output.push(item);
+    });
+  });
+  return output
+}
+
+$("#search_form").submit(function () {
+  query = $("input.search-query.tt-input").val()
+  id_array = search(query).map(function (i){return i.id})
+  $("#id_array").val(id_array)
+})
+
 </script>
 

@@ -10,13 +10,15 @@
   / Collect the nav links, forms, and other content for toggling
   #bs-example-navbar-collapse-1.collapse.navbar-collapse
     /%form.navbar-form.navbar-right{role: "search"}
-    = form_tag("/index", :method => "post", class: "form-horizontal navbar-form navbar-right") do
+    = form_tag("/index", :method => "post", class: "form-horizontal navbar-form navbar-right", id: 'search_form') do
       .form-group
         .input-group
           = text_field_tag(:name, nil, class: "form-control", id: "menu-search", placeholder: "Search")
           /%button.btn.btn-default.input-group-addon{type: "submit"}
           = button_tag(:class => "btn btn-default input-group-addon", type: 'submit') do
             %span.glyphicon.glyphicon-search
+        %input#id_array{name: "id_array", type:"hidden"}
+        = javascript_include_tag "search"
     %ul.nav.navbar-nav.navbar-right
       %li
         = link_to "New Order", new_order_path
@@ -35,26 +37,3 @@
       - else
         / not signed in
         %li= link_to "Sign in", signin_path
-/
-  <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
-  <haml_silent>          if signed_in?
-  </haml_silent><haml_block>          <haml_loud> link_to "disc orders [\#{current_user.name}]", root_path, id: "logo" </haml_loud>
-  </haml_block><haml_silent>           else
-  </haml_silent><haml_block>          <haml_loud> link_to "disc orders", root_path, id: "logo" </haml_loud>
-  </haml_block>          <nav>
-  <ul class="nav pull-right">
-  <haml_silent>              if signed_in?
-  </haml_silent><haml_block>              <li><haml_loud> link_to "Sign out", signout_path, method: "delete" </haml_loud></li>
-  <haml_silent>               if current_user.admin?
-  </haml_silent><haml_block>              <li><haml_loud> link_to "All Users", users_path </haml_loud></li>
-  </haml_block></haml_block><haml_silent>               else
-  </haml_silent><haml_block>              <li><haml_loud> link_to "Sign in", signin_path </haml_loud></li>
-  </haml_block>              <li><haml_loud> link_to "All Orders", root_path, sort: nil, reverse: nil </haml_loud></li>
-  <li><haml_loud> link_to "New Order", new_order_path</haml_loud></li>
-  <li><haml_loud> link_to "Totals", action:'total', controller: 'orders' </haml_loud></li>
-  <li><haml_loud> link_to "Search", search_path </haml_loud></li>
-  </ul>
-  </nav>
-  </div>
-  </header>

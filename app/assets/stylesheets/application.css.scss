@@ -24,8 +24,7 @@ input.search-query {
 .typeahead,
 .tt-query,
 .tt-hint {
-  padding-left: 14px !important;
-  padding-right: 14px !important;
+ 
   border: 2px solid #ccc;
   -webkit-border-radius: 8px;
      -moz-border-radius: 8px;
@@ -48,7 +47,8 @@ input.search-query {
 }
 
 .tt-hint {
-  color: #999
+  color: #999;
+  height: 30px;
 }
 
 .tt-dropdown-menu {
@@ -74,9 +74,9 @@ input.search-query {
   }
 }
 
-.tt-suggestion.tt-is-under-cursor {
+.tt-suggestion.tt-cursor {
   color: #fff;
-  background-color: #0097cf;
+  background-color: #0097cf
 
 }
 
@@ -93,18 +93,25 @@ nav form.navbar-form {
   margin-right: 20px;
   .input-group{
     height: 20px;
-  }
+    width:100%;
+    position:relative;
+  button {
+      position:absolute;
+      top: 0px;
+      right: 0px;
+      height: 30px; 
+      width: 30px;
+      padding: 0;
+    }
   input#menu-search {
     width: 15px;
     height: 30px;
     transition: width 0.3s ease;
-    &:focus{
-      width:200px;
-    }
-    & + button {
-      height:30px; 
-      width: 30px;
-      padding: 0;
+    margin-right: 30px;
+    &{
+      width:300px;
     }
   }
+}
+
 }

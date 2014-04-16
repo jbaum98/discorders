@@ -1,39 +1,19 @@
 class OrdersController < ApplicationController
-  @@atts = ['name', 'bunk']
   # GET /orders
   # GET /orders.json
   def index
-    unless params['name'].nil? and params['bunk'].nil?
-      params['name']&&=params['name'].titleize
-      params['bunk']&&=params['bunk'].capitalize
-      match_data = /([A,a,B,b])(\d{1,2})/.match params['bunk']
-              if match_data
-                params['bunk'] = "#{match_data[1].capitalize}-#{match_data[2]}"
-              end
-      @orders = []
-      params.each_key do |term|
-        if @@atts.include? term and not params[term].empty?
-          all_orders.each do |order|
-            if order[term].include? params[term] or params[term].include? order[term]
-              @orders.append(order) unless @orders.include? order or (params[:needy]=='1' and order.received)
-            end
-          end
-        end
-      end
-      if params['name'].empty? and params['bunk'].empty?
-        all_orders.each do |order|
-          @orders.append(order) unless @orders.include? order or (params[:needy]=='1' and order.received)
-        end
-      end
+    if not params[:id_array].nil?
+      id_array = params[:id_array].split(",").map { |i| i.to_i}
+      @orders = id_array.map { |id| Order.find(id)  }
+    else
+      @orders = all_orders
     end
-    @orders=all_orders if params['name'].nil? and params['bunk'].nil?
 
     params[:sort] ||= 'created_at'
 
     @orders.sort_by!{ |order| order[params[:sort]]} unless ['paid', 'received'].include? params[:sort]
     @orders.sort_by!{ |order| order[params[:sort]] ? 0 : 1} if ['paid', 'received'].include? params[:sort]
     @orders.reverse! if (params[:reverse] == "true")
-
     
     redirect_to @orders[0] if @orders.size == 1
   end
@@ -131,15 +111,16 @@ class OrdersController < ApplicationController
     all_orders.each {|order| @price_total+=order.price}
   end
 
-  def names
+  def data
     orders = if signed_in?
       current_user.orders
     else
       Order.find_all_by_user_id(nil)
     end
     data = orders.collect do |order|
-      {value: order.name,
-        tokens: order.name.split(' ')}
+      {name: order.name,
+        bunk: order.bunk,
+        id: order.id}
       end
     data.uniq!
     respond_to {|format| 
