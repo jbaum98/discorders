@@ -1,9 +1,11 @@
-@import "bootstrap";
+
 
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
-
+$grayLight: #eaeaea;
+$grayDarker: #eaeaea;
+$gray: grey;
 
 /* universal */
 
@@ -67,45 +69,9 @@ td.show_bold, label.show_bold{
 
 /* header */
 
-#logo {
-  position:absolute;
-  float: left;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  line-height: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  box-sizing: border-box;
-  -moz-box-sizing:border-box;
-  -webkit-box-sizing:border-box;
-  padding-right: 400px;
-  padding-left:35px;
-  width: 100%;
-  min-width:100;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
-}
-
 div.hero-unit {
   padding: 20px
 
-}
-
-nav {
-  float:right;
-  padding: 0;
-  padding-left: 50;
-  top: 0px;
-  bottom: 0px;
-  right:0px;
-  width: 520px; 
 }
 
 /* footer */
@@ -188,8 +154,6 @@ dd, dt, dl{
 }
 
 .field_with_errors, .field_with_errors:before, .field_with_errors:after {
-  @extend .control-group;
-  @extend .error;
   display: inline !important;
 }
 

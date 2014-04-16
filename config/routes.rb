@@ -9,7 +9,7 @@ Disc_orders::Application.routes.draw do
   resources :users, only: [:new, :create, :index, :destroy]
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
+  match '/signout', to: 'sessions#destroy',     via: ['get', 'delete']
 
   resources :sessions, only: [:new, :create, :destroy]
 

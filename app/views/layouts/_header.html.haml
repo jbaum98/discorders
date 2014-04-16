@@ -1,0 +1,60 @@
+%nav.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
+  / Brand and toggle get grouped for better mobile display
+  .navbar-header
+    %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", type: "button"}
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    = link_to "Disc Orders", root_path, id: "logo", class:"navbar-brand"
+  / Collect the nav links, forms, and other content for toggling
+  #bs-example-navbar-collapse-1.collapse.navbar-collapse
+    /%form.navbar-form.navbar-right{role: "search"}
+    = form_tag("/index", :method => "post", class: "form-horizontal navbar-form navbar-right") do
+      .form-group
+        .input-group
+          = text_field_tag(:name, nil, class: "form-control", id: "menu-search", placeholder: "Search")
+          /%button.btn.btn-default.input-group-addon{type: "submit"}
+          = button_tag(:class => "btn btn-default input-group-addon", type: 'submit') do
+            %span.glyphicon.glyphicon-search
+    %ul.nav.navbar-nav.navbar-right
+      %li
+        = link_to "New Order", new_order_path
+      %li
+        = link_to "Totals", action:'total', controller: 'orders'
+      - if signed_in?
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+            = current_user.name
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              = link_to "Sign out", signout_path, method: "delete"
+            - if current_user.admin?
+              %li= link_to "All Users", users_path
+      - else
+        / not signed in
+        %li= link_to "Sign in", signin_path
+/
+  <header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+  <haml_silent>          if signed_in?
+  </haml_silent><haml_block>          <haml_loud> link_to "disc orders [\#{current_user.name}]", root_path, id: "logo" </haml_loud>
+  </haml_block><haml_silent>           else
+  </haml_silent><haml_block>          <haml_loud> link_to "disc orders", root_path, id: "logo" </haml_loud>
+  </haml_block>          <nav>
+  <ul class="nav pull-right">
+  <haml_silent>              if signed_in?
+  </haml_silent><haml_block>              <li><haml_loud> link_to "Sign out", signout_path, method: "delete" </haml_loud></li>
+  <haml_silent>               if current_user.admin?
+  </haml_silent><haml_block>              <li><haml_loud> link_to "All Users", users_path </haml_loud></li>
+  </haml_block></haml_block><haml_silent>               else
+  </haml_silent><haml_block>              <li><haml_loud> link_to "Sign in", signin_path </haml_loud></li>
+  </haml_block>              <li><haml_loud> link_to "All Orders", root_path, sort: nil, reverse: nil </haml_loud></li>
+  <li><haml_loud> link_to "New Order", new_order_path</haml_loud></li>
+  <li><haml_loud> link_to "Totals", action:'total', controller: 'orders' </haml_loud></li>
+  <li><haml_loud> link_to "Search", search_path </haml_loud></li>
+  </ul>
+  </nav>
+  </div>
+  </header>

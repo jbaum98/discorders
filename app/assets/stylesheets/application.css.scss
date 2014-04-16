@@ -11,7 +11,6 @@
  *= require_self
  *= require_tree .
  */
-@import "bootstrap";
 
 div.container {
 	width: 97% !important
@@ -87,4 +86,25 @@ input.search-query {
 
 .gist {
   font-size: 14px;
+}
+
+nav form.navbar-form {
+  margin-left: 15px;
+  margin-right: 20px;
+  .input-group{
+    height: 20px;
+  }
+  input#menu-search {
+    width: 15px;
+    height: 30px;
+    transition: width 0.3s ease;
+    &:focus{
+      width:200px;
+    }
+    & + button {
+      height:30px; 
+      width: 30px;
+      padding: 0;
+    }
+  }
 }
