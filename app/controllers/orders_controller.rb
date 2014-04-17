@@ -46,11 +46,11 @@ class OrdersController < ApplicationController
   def create
     @order = signed_in? ? current_user.orders.new(params[:order]) : Order.new(params[:order])
     if @order.save
-      flash[:ordered] = "Order placed for #{@order.name} in bunk #{@order.bunk} for #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."
+      flash[:info] = "Order placed for #{@order.name} in bunk #{@order.bunk} for #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."
       if @order.paid
-        flash[:paid] = "#{@order.name} paid $#{@order.price}."
+        flash[:success] = "#{@order.name} paid $#{@order.price}."
       else
-        flash[:notpaid] = "Remeber to bring $#{@order.price} when you pick up your discs."
+        flash[:danger] = "Remeber to bring $#{@order.price} when you pick up your discs."
       end
       redirect_to root_path
     else
@@ -71,7 +71,7 @@ class OrdersController < ApplicationController
           end
         format.html {
           unless request.referer =~ /edit/
-            redirect_to request.referer
+            redirect_to request.referer, notice: 'Order was successfully updated.'
           else
             redirect_to @order, notice: 'Order was successfully updated.'
           end
