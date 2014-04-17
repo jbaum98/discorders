@@ -1,7 +1,11 @@
+
+
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
-$grayLight: #999;
+$grayLight: #eaeaea;
+$grayDarker: #eaeaea;
+$gray: grey;
 
 /* universal */
 
@@ -10,7 +14,7 @@ html {
 }
 
 body {
-  padding-top: 600px;
+  padding-top: 60px;
 }
 
 section {
@@ -65,45 +69,9 @@ td.show_bold, label.show_bold{
 
 /* header */
 
-#logo {
-  position:absolute;
-  float: left;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  line-height: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  box-sizing: border-box;
-  -moz-box-sizing:border-box;
-  -webkit-box-sizing:border-box;
-  padding-right: 400px;
-  padding-left:35px;
-  width: 100%;
-  min-width:100;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
-}
-
 div.hero-unit {
   padding: 20px
 
-}
-
-nav {
-  float:right;
-  padding: 0;
-  padding-left: 50;
-  top: 0px;
-  bottom: 0px;
-  right:0px;
-  width: 520px; 
 }
 
 /* footer */
@@ -114,9 +82,9 @@ footer {
   border-top: 1px solid $grayMediumLight;
   color: $grayLight;
   a {
-    color: gray;
+    color: $gray;
     &:hover {
-      color: darken(gray, 5);
+      color: $grayDarker;
     }
   }
   small {
@@ -142,14 +110,6 @@ footer {
 background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
-}
-
-span#notpaid, td#notpaid {
-  color: #b94a48
-}
-
-span#paid, td#paid {
-  color: #468847
 }
 
 input[type='text'], input[type='number'], input[type='checkbox'], label{
@@ -186,7 +146,29 @@ dd, dt, dl{
 }
 
 .field_with_errors, .field_with_errors:before, .field_with_errors:after {
-  @extend .control-group;
-  @extend .error;
   display: inline !important;
+}
+
+.dropdown-toggle {
+  height:20
+}
+
+.dropdown-menu {
+  min-width: 100;
+  li {
+    a {
+    padding-left:12
+    }
+  }
+}
+
+.btn-group > .btn + .dropdown-toggle, .btn-group.open .dropdown-toggle {
+  padding-left: 8px;
+  padding-right: 8px;
+  -webkit-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  *padding-top: 5px;
+  *padding-bottom: 5px;
+  margin-left:0
 }

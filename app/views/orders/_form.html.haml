@@ -1,0 +1,44 @@
+= javascript_include_tag "application"
+= form_for(@order, :html => {class: "form-horizontal", role: 'form', id:"order_form"}) do |f|
+  = render 'shared/error_messages'
+  - cols_input = 4
+  - cols_label = 1
+  - 
+  .form-group
+    = f.label :name, "Name", class: "col-sm-#{cols_label}"
+    %div{class: "col-sm-#{cols_input}"}
+      = f.text_field :name, {placeholder: '', class: "form-control"}
+  .form-group
+    = f.label :bunk, "Bunk", class: "col-sm-#{cols_label}"
+    %div{class: "col-sm-#{cols_input}"}
+      = f.text_field :bunk, {placeholder: '', class: "form-control" }
+  .form-group
+    - @order.white ||= 0
+    - @order.orange ||= 0
+    - @order.blue ||= 0
+    = f.label :white, "Discs", class: "col-sm-#{cols_label}"
+    %div{class: "col-sm-#{cols_input}"}
+      .input-group
+        .input-group-addon White:
+        = f.number_field :white, {value: @order.white, min: 0, step: 1, class: "form-control"}
+  .form-group
+    %div{class: "col-sm-#{cols_input} col-sm-offset-#{cols_label}"}
+      .input-group
+        .input-group-addon Orange:
+        = f.number_field :orange, {value: @order.orange, min: 0, step: 1, class: "form-control"}
+  .form-group
+    %div{class: "col-sm-#{cols_input} col-sm-offset-#{cols_label}"}
+      .input-group
+        .input-group-addon Blue:
+        = f.number_field :blue, {value: @order.blue, min: 0, step: 1, class: "form-control"}
+  .form-group
+    - paid_cache = @order.paid.nil? || @order.paid
+    = f.label :paid, class: "col-sm-#{cols_label}"
+    %div#checkbox_button{class: "col-sm-#{cols_input}"}
+      =#%button.btn.form-control{class: "btn-#{paid_cache ? 'success' : 'danger'}"}Paid
+      = f.check_box :paid, value: paid_cache
+      = f.label :paid, "($#{@order.price})", class: "form-control"
+  .form-group
+    = submit_tag("Save changes", {:class => "btn btn-primary"})
+    = link_to "Back", root_path, class: "btn"
+= javascript_include_tag "orders"

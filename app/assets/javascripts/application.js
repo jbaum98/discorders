@@ -11,5 +11,3 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require turbolinks
-//= require_tree .
-
