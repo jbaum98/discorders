@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
   end
 
   def recent
-    @orders = all_orders
+    @orders = signed_in? ? current_user.orders : Order.where('user_id'=>nil)
     @orders = @orders.paginate(page: params[:page], per_page: 10).order('created_at DESC')
   end
 
