@@ -23,7 +23,6 @@
       = f.submit "$"+@order.price.to_s, class: "btn btn-" + (@order.paid ? "success" : "danger")
   %dt Received:
   %dd
-    -# old_params = params || {}
     = form_for @order do |f|
       = f.hidden_field :received, value: !@order.received
       = f.submit (@order.received ?  "Already Received" : "Not Received"), class: "btn btn-" + (@order.received ? "success" : "danger") +  (!@order.paid ? " disabled" : "")

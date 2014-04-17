@@ -24,7 +24,6 @@
         = form_for order do |f|
           = f.hidden_field :paid, value: !order.paid
           = f.submit "$"+order.price.to_s, class: "btn btn-" + (order.paid ? "success" : "danger"), index: true
-      - old_params = params || {}
       %td#received
         = form_for order do |f|
           = f.hidden_field :received, value: !order.received

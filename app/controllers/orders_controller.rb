@@ -61,7 +61,6 @@ class OrdersController < ApplicationController
   # PUT /orders/1
   # PUT /orders/1.json
   def update
-    params[:old_params] ||={}
     @order = Order.find(params[:id])
 
     respond_to do |format|
