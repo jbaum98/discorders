@@ -9,9 +9,15 @@ class OrdersController < ApplicationController
       @orders = all_orders
     end
     @orders.sort_by! {|x| x.created_at }.reverse!
-    gon.orders = @orders
+    #@orders = @orders.paginate(page: params[:page], per_page: 10)
+    #gon.orders = @orders
 
     redirect_to @orders[0] if @orders.size == 1
+  end
+
+  def recent
+    @orders = all_orders
+    @orders = @orders.paginate(page: params[:page], per_page: 10).order('created_at DESC')
   end
 
   # GET /orders/1
@@ -70,10 +76,12 @@ class OrdersController < ApplicationController
           when false then {notreceived: "#{@order.name} in bunk #{@order.bunk} has NOT received his/her #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."}
           end
         format.html {
-          unless request.referer =~ /edit/
-            redirect_to request.referer, notice: 'Order was successfully updated.'
-          else
+          if request.referer =~ /edit/
             redirect_to @order, notice: 'Order was successfully updated.'
+          elsif request.referer =~ /index/
+            redirect_to root_path, notice: 'Order was successfully updated.'
+          else
+            redirect_to request.referer, notice: 'Order was successfully updated.'
           end
         }
         format.json { head :no_content }
@@ -116,7 +124,14 @@ class OrdersController < ApplicationController
     data = orders.collect do |order|
       {name: order.name,
         bunk: order.bunk,
-        id: order.id}
+        id: order.id,
+        white: order.white,
+        orange: order.orange,
+        blue: order.blue,
+        paid: order.paid,
+        price: order.price,
+        received: order.received
+      }
       end
     data.uniq!
     respond_to {|format| 

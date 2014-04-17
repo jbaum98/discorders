@@ -20,10 +20,9 @@
         %input#id_array{name: "id_array", type:"hidden"}
         = javascript_include_tag "search.js"
     %ul.nav.navbar-nav.navbar-right
-      %li
-        = link_to "New Order", new_order_path
-      %li
-        = link_to "Totals", action:'total', controller: 'orders'
+      %li{class: "#{params[:action] == 'index' and params[:controller] == 'orders' ? 'active' : ''}"}= link_to "All Orders", index_path
+      %li{class: "#{params[:action] == 'new'  and params[:controller] == 'orders' ? 'active' : ''}"}= link_to "New Order", new_order_path
+      %li{class: "#{params[:action] == 'total'  and params[:controller] == 'orders' ? 'active' : ''}"}= link_to "Totals", action:'total', controller: 'orders'
       - if signed_in?
         %li.dropdown
           %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}

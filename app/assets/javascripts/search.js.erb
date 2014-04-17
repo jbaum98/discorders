@@ -22,7 +22,7 @@ var discs = new Bloodhound({
             },
             templates: {
                 suggestion: function(suggestion) {
-                    return "<p><b>" + suggestion.name + "</b> - <small>" + suggestion.bunk + "</small></p>";
+                    return "<ul class='list-unstyled list-inline'><li><b>" + suggestion.name + "</b> - <small>" + suggestion.bunk + "</small></li><li> <span class='circle white'></span>" + suggestion.white + "</li><li> <span class='circle orange'></span>" + suggestion.orange + "</li><li> <span class='circle blue'></span>" + suggestion.blue + "</li><li class='" + (suggestion.paid ? "green" : "red") + "'>$" + suggestion.price +  "</li><li class='" + (suggestion.received ? "green" : "red") + "'>" + (suggestion.received ? "Yes" : "No") + "</li></ul>"
                 }
             }
         });

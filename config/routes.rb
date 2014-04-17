@@ -1,5 +1,5 @@
 Disc_orders::Application.routes.draw do
-  root to: 'orders#index'
+  root to: 'orders#recent'
   resources :orders
   get '/total', action: 'total', controller: 'orders'
   get '/index', action: 'index', controller: 'orders'
