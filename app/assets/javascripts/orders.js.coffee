@@ -22,4 +22,4 @@ $ ->
 	}`
 
 	$("input:regex(id, order_(blue|orange|white))").on "change", ->
-	    $("label[for='order_paid']").text("Paid ($"+((parseInt($(order_orange).val())+parseInt($(order_blue).val())+parseInt($(order_white).val()))*8)+")")
+	    $("label[for='order_paid'].form-control").text("($"+((parseInt($(order_orange).val())+parseInt($(order_blue).val())+parseInt($(order_white).val()))*8)+")")

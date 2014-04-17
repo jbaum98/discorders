@@ -74,8 +74,13 @@ class OrdersController < ApplicationController
           when true then {received: "#{@order.name} in bunk #{@order.bunk} has received his/her #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."}
           when false then {notreceived: "#{@order.name} in bunk #{@order.bunk} has NOT received his/her #{@order.white} white, #{@order.orange} orange, and #{@order.blue} blue frisbees."}
           end
-        format.html { redirect_to({url: request.referer}.merge(params[:old_params]), flash: message )} unless URI(request.referer).path.include? 'edit'
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html {
+          unless request.referer =~ /edit/
+            redirect_to request.referer
+          else
+            redirect_to @order, notice: 'Order was successfully updated.'
+          end
+        }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

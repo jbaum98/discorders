@@ -18,7 +18,7 @@
           = button_tag(:class => "btn btn-default input-group-addon", type: 'submit') do
             %span.glyphicon.glyphicon-search
         %input#id_array{name: "id_array", type:"hidden"}
-        = javascript_include_tag "search"
+        = javascript_include_tag "search.js"
     %ul.nav.navbar-nav.navbar-right
       %li
         = link_to "New Order", new_order_path

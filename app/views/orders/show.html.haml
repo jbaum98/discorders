@@ -1,0 +1,32 @@
+- provide(:title, 'View Order')
+%p#notice= notice
+%dl.dl-horizontal
+  %dt Name:
+  %dd= @order.name
+
+  %dt Bunk:
+  %dd= @order.bunk
+
+  %dt White:
+  %dd= @order.white
+
+  %dt Orange:
+  %dd= @order.orange
+
+  %dt Blue:
+  %dd= @order.blue
+
+  %dt Paid:
+  %dd
+    = form_for @order do |f| 
+      = f.hidden_field :paid, value: !@order.paid
+      = f.submit "$"+@order.price.to_s, class: "btn btn-" + (@order.paid ? "success" : "danger")
+  %dt Received:
+  %dd
+    -# old_params = params || {}
+    = form_for @order do |f|
+      = f.hidden_field :received, value: !@order.received
+      = f.submit (@order.received ?  "Already Received" : "Not Received"), class: "btn btn-" + (@order.received ? "success" : "danger") +  (!@order.paid ? " disabled" : "")
+  %dd
+    = link_to 'Edit', edit_order_path(@order), class: "btn btn-info"
+    = link_to 'Back', root_path, class: "btn btn-info"
