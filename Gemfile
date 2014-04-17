@@ -10,6 +10,7 @@ gem "activerecord-import", ">= 0.2.0"
 gem "spreadsheet"
 gem 'newrelic_rpm'
 gem "haml", "~> 4.0.3"
+gem 'gon'
 
 
 group :development do

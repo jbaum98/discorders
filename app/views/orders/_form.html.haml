@@ -1,5 +1,5 @@
 = javascript_include_tag "application"
-= form_for(@order, :html => {class: "form-horizontal", role: 'form'}) do |f|
+= form_for(@order, :html => {class: "form-horizontal", role: 'form', id:"order_form"}) do |f|
   = render 'shared/error_messages'
   - cols_input = 4
   - cols_label = 1
@@ -41,3 +41,4 @@
   .form-group
     = submit_tag("Save changes", {:class => "btn btn-primary"})
     = link_to "Back", root_path, class: "btn"
+= javascript_include_tag "orders"

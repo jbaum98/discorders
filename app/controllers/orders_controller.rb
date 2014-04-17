@@ -8,13 +8,9 @@ class OrdersController < ApplicationController
     else
       @orders = all_orders
     end
+    @orders.sort_by! {|x| x.created_at }.reverse!
+    gon.orders = @orders
 
-    params[:sort] ||= 'created_at'
-
-    @orders.sort_by!{ |order| order[params[:sort]]} unless ['paid', 'received'].include? params[:sort]
-    @orders.sort_by!{ |order| order[params[:sort]] ? 0 : 1} if ['paid', 'received'].include? params[:sort]
-    @orders.reverse! if (params[:reverse] == "true")
-    
     redirect_to @orders[0] if @orders.size == 1
   end
 
@@ -117,11 +113,7 @@ class OrdersController < ApplicationController
   end
 
   def data
-    orders = if signed_in?
-      current_user.orders
-    else
-      Order.find_all_by_user_id(nil)
-    end
+    orders = all_orders
     data = orders.collect do |order|
       {name: order.name,
         bunk: order.bunk,
