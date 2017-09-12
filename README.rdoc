@@ -1,2 +1,4 @@
-Disc Orders
+= Disc Orders
 Helps keep track of disc orders for Berkshires Ultimate.
+
+Live at https://discorders.herokuapp.com
